@@ -23,7 +23,20 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./app/*"],
-      "@assets/*": ["./assets/*"]
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./app/components/*"],
+      "@config/*": ["./app/config/*"],
+      "@context/*": ["./app/context/*"],
+      "@hooks/*": ["./app/hooks/*"],
+      "@i18n/*": ["./app/i18n/*"],
+      "@navigators/*": ["./app/navigators/*"],
+      "@screens/*": ["./app/screens/*"],
+      "@services/*": ["./app/services/*"],
+      "@store/*": ["./app/store/*"],
+      "@db/*": ["./app/db/*"],
+      "@theme/*": ["./app/theme/*"],
+      "@utils/*": ["./app/utils/*"],
+      "@types/*": ["./types/*"]
     },
     "typeRoots": [
       "./node_modules/@types",

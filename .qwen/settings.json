@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git checkout *)",
+      "Bash(npx *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(npm run *)",
+      "Bash(findstr *)",
+      "Bash(npm install *)",
+      "Bash(npm *)",
+      "Bash(node *)",
+      "Bash(git reset *)",
+      "Bash(git merge *)",
+      "Bash(git branch *)",
+      "Bash(select-string *)",
+      "Bash(timeout *)",
+      "Bash(taskkill *)",
+      "Bash(git push *)",
+      "Bash(dir *)",
+      "Bash(true)",
+      "WebFetch(github.com)",
+      "WebFetch(raw.githubusercontent.com)"
+    ]
+  },
+  "$version": 3
+}

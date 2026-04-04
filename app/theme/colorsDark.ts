@@ -1,38 +1,65 @@
+/**
+ * Dark theme colors - Moroccan-inspired palette
+ */
 const palette = {
-  neutral900: "#FFFFFF",
-  neutral800: "#F4F2F1",
-  neutral700: "#D7CEC9",
+  // Primary - Moroccan Blue (lighter for dark theme)
+  primary600: "#E8F0F8",
+  primary500: "#B8D4EC",
+  primary400: "#8BB8E0",
+  primary300: "#5B9BD5",
+  primary200: "#1E5F9E",
+  primary100: "#154270",
+
+  // Secondary - Terracotta (lighter for dark theme)
+  secondary600: "#F5E6DE",
+  secondary500: "#E8C5B0",
+  secondary400: "#D4957A",
+  secondary300: "#C17B5D",
+  secondary200: "#9E5F45",
+  secondary100: "#7A4835",
+
+  // Accent - Gold (lighter for dark theme)
+  accent600: "#FFF8E1",
+  accent500: "#FFE9A3",
+  accent400: "#F5D76E",
+  accent300: "#D4AF37",
+  accent200: "#B89628",
+  accent100: "#8C7220",
+
+  // Neutral - Dark theme inverses
+  neutral900: "#FFFCF9",
+  neutral800: "#F8F5F0",
+  neutral700: "#E5E7EB",
   neutral600: "#B6ACA6",
   neutral500: "#978F8A",
-  neutral400: "#564E4A",
+  neutral400: "#6B6B6B",
   neutral300: "#3C3836",
-  neutral200: "#191015",
-  neutral100: "#000000",
+  neutral200: "#2D2D2D",
+  neutral100: "#1A1A1A",
 
-  primary600: "#F4E0D9",
-  primary500: "#E8C1B4",
-  primary400: "#DDA28E",
-  primary300: "#D28468",
-  primary200: "#C76542",
-  primary100: "#A54F31",
+  // Status colors (lighter variants for dark theme)
+  success600: "#E8F5E9",
+  success500: "#81C784",
+  success100: "#4CAF50",
+  warning600: "#FFF3E0",
+  warning500: "#FFB74D",
+  warning100: "#FF9800",
+  error600: "#FFEBEE",
+  error500: "#E57373",
+  error100: "#F44336",
+  info600: "#E3F2FD",
+  info500: "#64B5F6",
+  info100: "#2196F3",
 
-  secondary500: "#DCDDE9",
-  secondary400: "#BCC0D6",
-  secondary300: "#9196B9",
-  secondary200: "#626894",
-  secondary100: "#41476E",
+  // Category colors (lighter for dark theme)
+  categoryMonuments: "#5B9BD5",
+  categoryFood: "#D4957A",
+  categoryHistory: "#F5D76E",
+  categoryCulture: "#A78BFA",
 
-  accent500: "#FFEED4",
-  accent400: "#FFE1B2",
-  accent300: "#FDD495",
-  accent200: "#FBC878",
-  accent100: "#FFBB50",
-
-  angry100: "#F2D6CD",
-  angry500: "#C03403",
-
-  overlay20: "rgba(25, 16, 21, 0.2)",
-  overlay50: "rgba(25, 16, 21, 0.5)",
+  // Overlay
+  overlay20: "rgba(255, 255, 255, 0.2)",
+  overlay50: "rgba(255, 255, 255, 0.5)",
 } as const
 
 export const colors = {
@@ -45,6 +72,6 @@ export const colors = {
   tint: palette.primary500,
   tintInactive: palette.neutral300,
   separator: palette.neutral300,
-  error: palette.angry500,
-  errorBackground: palette.angry100,
+  error: palette.error500,
+  errorBackground: palette.error100,
 } as const

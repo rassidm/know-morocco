@@ -1,14 +1,16 @@
-const SPACING_MULTIPLIER = 1.0
-
-// This is an example of how you can have different spacing values for different themes.
+/**
+ * Spacing values for dark theme
+ * Same as light theme - consistent spacing across themes
+ */
 export const spacing = {
-  xxxs: 2 * SPACING_MULTIPLIER,
-  xxs: 4 * SPACING_MULTIPLIER,
-  xs: 8 * SPACING_MULTIPLIER,
-  sm: 12 * SPACING_MULTIPLIER,
-  md: 16 * SPACING_MULTIPLIER,
-  lg: 24 * SPACING_MULTIPLIER,
-  xl: 32 * SPACING_MULTIPLIER,
-  xxl: 48 * SPACING_MULTIPLIER,
-  xxxl: 64 * SPACING_MULTIPLIER,
+  none: 0,
+  xxxs: 2,
+  xxs: 4,
+  xs: 8,
+  sm: 12,
+  md: 16,
+  lg: 24,
+  xl: 32,
+  xxl: 48,
+  xxxl: 64,
 } as const

@@ -6,23 +6,15 @@
 
 <!-- Not Started|In Progress|Completed -->
 
-Completed
+Not Started
 
 ## Goals
 
-- [x] `.env` file created with all required environment variables
-- [x] `.env.example` file created for version control
-- [x] Environment configuration module created with validation
-- [x] Supabase configuration module created
-- [x] AdMob configuration module created
-- [x] Path aliases verified in tsconfig.json
-- [x] TypeScript compiles without errors
+<!-- Goals & requirements -->
 
 ## Notes
 
-- Supabase package installed: `@supabase/supabase-js`
-- Path alias `@types/*` requires relative import in `app/config/supabase.ts`
-- Test AdMob IDs configured for development
+<!-- Any extra notes -->
 
 ## History
 

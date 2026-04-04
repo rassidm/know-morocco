@@ -5,7 +5,9 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "jsx": "react-native",
-    "customConditions": ["react-native"],
+    "customConditions": [
+      "react-native"
+    ],
     "module": "esnext",
     "moduleResolution": "bundler",
     "strict": true,
@@ -22,21 +24,51 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./app/*"],
-      "@assets/*": ["./assets/*"],
-      "@components/*": ["./app/components/*"],
-      "@config/*": ["./app/config/*"],
-      "@context/*": ["./app/context/*"],
-      "@hooks/*": ["./app/hooks/*"],
-      "@i18n/*": ["./app/i18n/*"],
-      "@navigators/*": ["./app/navigators/*"],
-      "@screens/*": ["./app/screens/*"],
-      "@services/*": ["./app/services/*"],
-      "@store/*": ["./app/store/*"],
-      "@db/*": ["./app/db/*"],
-      "@theme/*": ["./app/theme/*"],
-      "@utils/*": ["./app/utils/*"],
-      "@types/*": ["./types/*"]
+      "@/*": [
+        "./app/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@components/*": [
+        "./app/components/*"
+      ],
+      "@config/*": [
+        "./app/config/*"
+      ],
+      "@context/*": [
+        "./app/context/*"
+      ],
+      "@hooks/*": [
+        "./app/hooks/*"
+      ],
+      "@i18n/*": [
+        "./app/i18n/*"
+      ],
+      "@navigators/*": [
+        "./app/navigators/*"
+      ],
+      "@screens/*": [
+        "./app/screens/*"
+      ],
+      "@services/*": [
+        "./app/services/*"
+      ],
+      "@store/*": [
+        "./app/store/*"
+      ],
+      "@db/*": [
+        "./app/db/*"
+      ],
+      "@theme/*": [
+        "./app/theme/*"
+      ],
+      "@utils/*": [
+        "./app/utils/*"
+      ],
+      "@types/*": [
+        "./types/*"
+      ]
     },
     "typeRoots": [
       "./node_modules/@types",
@@ -50,9 +82,7 @@
   },
   "include": [
     "**/*.ts",
-    "**/*.tsx",
-    ".expo/types/**/*.ts",
-    "expo-env.d.ts"
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules",

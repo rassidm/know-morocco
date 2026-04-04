@@ -1,29 +1,20 @@
 # Current Feature
 
+<!-- Feature Name -->
+
 ## Status
 
-Complete
+<!-- Not Started|In Progress|Completed -->
+
+Not Started
 
 ## Goals
 
-Implement the complete theme system for Know Morocco with Moroccan-inspired design tokens, including colors, typography, spacing, and a theming context that supports light/dark mode.
-
-### Acceptance Criteria
-- [x] Design tokens defined (colors, spacing, typography)
-- [x] Theme context provider created with light/dark mode support
-- [x] `useAppTheme` hook created for accessing theme
-- [x] `themed()` helper function for styling components
-- [x] Theme persistence with MMKV
-- [x] Dark mode colors defined
-- [x] Typography scale implemented
-- [x] Spacing scale implemented
+<!-- Goals & requirements -->
 
 ## Notes
 
-- Adapted the spec to work with the existing Ignite boilerplate theme architecture
-- The existing `ThemedStyle<T>` function-based API was preserved (used by 74+ files)
-- Moroccan-inspired colors replaced the default Ignite palette
-- `angry500` palette color renamed to `error500` for consistency
+<!-- Any extra notes -->
 
 ## History
 

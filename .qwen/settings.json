@@ -20,7 +20,10 @@
       "Bash(dir *)",
       "Bash(true)",
       "WebFetch(github.com)",
-      "WebFetch(raw.githubusercontent.com)"
+      "WebFetch(raw.githubusercontent.com)",
+      "Bash(del *)",
+      "Bash(cmd *)",
+      "Bash(rmdir *)"
     ]
   },
   "$version": 3

@@ -1,7 +1,9 @@
 /**
-  Use these spacings for margins/paddings and other whitespace throughout your app.
+ * Spacing values for light theme
+ * Base spacing unit: 4px
  */
 export const spacing = {
+  none: 0,
   xxxs: 2,
   xxs: 4,
   xs: 8,

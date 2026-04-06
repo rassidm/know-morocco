@@ -1,28 +1,18 @@
-# Current Feature: Navigation Foundation Setup
+# Current Feature
+
+<!-- Load a feature with: /feature load <feature-file.md> -->
 
 ## Status
-Complete
+Not Started
 
 ## Goals
-- [x] Navigation types defined with TypeScript
-- [x] Auth stack navigator created (Login screen)
-- [x] App stack navigator created (Main screens)
-- [x] Bottom tabs navigator created (Home, Nearby, Profile)
-- [x] Navigation state persistence with MMKV
-- [x] Screen components created as placeholders
-- [x] Navigation hooks typed correctly
-- [x] Deep linking configuration ready
+<!-- Bullet points of what success looks like -->
 
 ## Notes
-- **Feature ID:** 003
-- **Phase:** 1 - Foundation Setup
-- **Dependencies:** 001 (Project Configuration), 002 (Theme System)
-- **Estimated Time:** 60 minutes
-- React Navigation v7 uses native stack by default
-- All screens are placeholders for now
-- Navigation persistence uses MMKV storage
+<!-- Additional context, constraints, or details from spec -->
 
 ## History
+<!-- Append completed features here (most recent at bottom) -->
 - **Feature 003 - Navigation Foundation Setup** - Complete
   - Created comprehensive navigation types (RootStack, AuthStack, AppTabs, AppStack)
   - Created AuthNavigator with Login and Welcome screens

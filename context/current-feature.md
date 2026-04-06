@@ -1,22 +1,70 @@
 # Current Feature
 
-<!-- Feature Name -->
-
 ## Status
 
-<!-- Not Started|In Progress|Completed -->
+<!-- Not Started | In Progress | Completed -->
 
-Not Started
-
-## Goals
-
-<!-- Goals & requirements -->
-
-## Notes
-
-<!-- Any extra notes -->
+No active feature
 
 ## History
+
+### Feature 006 - Authentication Context and State Management
+
+**Completed:** 2026-04-06
+
+**Summary:**
+Implemented the complete authentication context with Supabase Auth integration:
+- Created AuthContext types (`app/context/AuthContext.types.ts`) with TypeScript interfaces
+- Created AuthProvider (`app/context/AuthContext.tsx`) with session management, auth state listener, and Google OAuth sign-in
+- Created auth helpers (`app/context/authHelpers.ts`) with utility functions
+- AuthProvider already integrated in `app/app.tsx` (existing wrapper)
+- RootNavigator and AppNavigator already use `useAuth()` hook
+- Replaced Ignite boilerplate email/password LoginScreen with Google OAuth UI
+- Updated WelcomeScreen to use `signOut` instead of old `logout`
+- TypeScript compiles without errors
+- ESLint passes
+
+**Files Created:**
+- `app/context/AuthContext.types.ts` - TypeScript interfaces for auth context
+- `app/context/authHelpers.ts` - Auth utility functions (isAuthCached, getCurrentUserId, getAuthToken, waitForAuth)
+
+**Files Modified:**
+- `app/context/AuthContext.tsx` - Replaced MMKV-based boilerplate with Supabase Auth provider
+- `app/screens/LoginScreen.tsx` - Converted from email/password form to Google OAuth button
+- `app/screens/WelcomeScreen.tsx` - Updated `logout` to `signOut`
+
+**Verification:**
+- TypeScript compiles without errors (`npx tsc --noEmit` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
+
+### Feature 005 - Supabase Client and Database Setup
+
+**Completed:** 2026-04-06
+
+**Summary:**
+Implemented the complete Supabase client infrastructure:
+- Created Supabase client singleton (`app/services/supabase.ts`) with PKCE auth flow
+- Created database query helpers (`app/services/databaseHelpers.ts`) with error handling wrappers
+- Created storage helper (`app/services/storage.ts`) for file upload/download operations
+- Created test connection function (`app/services/testConnection.ts`) for connectivity verification
+- Integrated existing database types from `types/database.types.ts`
+- All auth helpers (getSession, getUser, getAccessToken, signOut) implemented
+- Consolidated duplicate `app/config/supabase.ts` into re-export barrel
+- TypeScript compiles without errors
+- ESLint passes
+
+**Files Created:**
+- `app/services/supabase.ts` - Main Supabase client singleton with auth helpers
+- `app/services/databaseHelpers.ts` - Error handling wrappers and auth utilities
+- `app/services/storage.ts` - File storage helpers (upload, download, delete, list)
+- `app/services/testConnection.ts` - Connection testing function
+
+**Files Modified:**
+- `app/config/supabase.ts` - Converted to re-export barrel (eliminated duplicate)
+
+**Verification:**
+- TypeScript compiles without errors (`npx tsc --noEmit` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
 
 ### Feature 002 - Theme System and Design Tokens
 

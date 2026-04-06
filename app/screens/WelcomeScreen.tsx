@@ -21,7 +21,7 @@ interface WelcomeScreenProps extends AppStackScreenProps<"Welcome"> {}
 export const WelcomeScreen: FC<WelcomeScreenProps> = function WelcomeScreen(_props) {
   const { themed, theme } = useAppTheme()
 
-  const { logout } = useAuth()
+  const { signOut } = useAuth()
 
   function goNext() {
     // TODO: Navigate to your first screen
@@ -30,9 +30,9 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = function WelcomeScreen(_pro
   useHeader(
     {
       rightTx: "common:logOut",
-      onRightPress: logout,
+      onRightPress: signOut,
     },
-    [logout],
+    [signOut],
   )
 
   const $bottomContainerInsets = useSafeAreaInsetsStyle(["bottom"])

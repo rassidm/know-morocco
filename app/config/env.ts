@@ -1,5 +1,4 @@
 import { Platform } from "react-native"
-import Constants from "expo-constants"
 
 /**
  * Environment configuration interface
@@ -17,10 +16,11 @@ export interface EnvConfig {
 }
 
 /**
- * Get environment variable from expo-constants
+ * Get environment variable from process.env
+ * Expo exposes EXPO_PUBLIC_* prefixed vars in the client bundle
  */
 function getEnvVar(key: string): string | undefined {
-  return Constants.expoConfig?.extra?.[key] || process.env[key]
+  return process.env[key]
 }
 
 /**
@@ -36,7 +36,7 @@ function getBoolEnvVar(key: string, defaultValue: boolean): boolean {
  * Validate required environment variables
  */
 function validateEnvVars() {
-  const requiredVars = ["SUPABASE_URL", "SUPABASE_ANON_KEY"]
+  const requiredVars = ["EXPO_PUBLIC_SUPABASE_URL", "EXPO_PUBLIC_SUPABASE_ANON_KEY"]
   const missingVars = requiredVars.filter((varName) => !getEnvVar(varName))
 
   if (missingVars.length > 0) {
@@ -53,14 +53,14 @@ validateEnvVars()
  * Environment configuration object
  */
 export const ENV: EnvConfig = {
-  supabaseUrl: getEnvVar("SUPABASE_URL") || "",
-  supabaseAnonKey: getEnvVar("SUPABASE_ANON_KEY") || "",
-  admobAppId: getEnvVar("ADMOB_APP_ID") || "",
-  admobBannerUnitId: getEnvVar("ADMOB_BANNER_UNIT_ID") || "",
-  admobInterstitialUnitId: getEnvVar("ADMOB_INTERSTITIAL_UNIT_ID") || "",
-  enableLocationServices: getBoolEnvVar("ENABLE_LOCATION_SERVICES", true),
-  enableAds: getBoolEnvVar("ENABLE_ADS", true),
-  enableAnalytics: getBoolEnvVar("ENABLE_ANALYTICS", false),
+  supabaseUrl: getEnvVar("EXPO_PUBLIC_SUPABASE_URL") || "",
+  supabaseAnonKey: getEnvVar("EXPO_PUBLIC_SUPABASE_ANON_KEY") || "",
+  admobAppId: getEnvVar("EXPO_PUBLIC_ADMOB_APP_ID") || "",
+  admobBannerUnitId: getEnvVar("EXPO_PUBLIC_ADMOB_BANNER_UNIT_ID") || "",
+  admobInterstitialUnitId: getEnvVar("EXPO_PUBLIC_ADMOB_INTERSTITIAL_UNIT_ID") || "",
+  enableLocationServices: getBoolEnvVar("EXPO_PUBLIC_ENABLE_LOCATION_SERVICES", true),
+  enableAds: getBoolEnvVar("EXPO_PUBLIC_ENABLE_ADS", true),
+  enableAnalytics: getBoolEnvVar("EXPO_PUBLIC_ENABLE_ANALYTICS", false),
   isDev: __DEV__,
 }
 

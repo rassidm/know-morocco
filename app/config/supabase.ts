@@ -1,37 +1,18 @@
-import { createClient } from "@supabase/supabase-js"
-
-import { ENV } from "./env"
-import type { Database } from "../../types/database.types"
-
 /**
- * Supabase client instance
+ * Supabase Configuration
+ *
+ * This module re-exports from the services layer to maintain
+ * backward compatibility. The actual Supabase client implementation
+ * lives in `app/services/supabase.ts`.
+ *
+ * For new code, prefer importing from `@/services/supabase` directly.
  */
-export const supabase = createClient<Database>(ENV.supabaseUrl, ENV.supabaseAnonKey, {
-  auth: {
-    autoRefreshToken: true,
-    persistSession: true,
-    detectSessionInUrl: true,
-  },
-})
 
-/**
- * Get the current user's access token
- */
-export async function getAccessToken(): Promise<string | null> {
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
-  return session?.access_token ?? null
-}
-
-/**
- * Get the current user
- */
-export async function getCurrentUser() {
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
-  return user
-}
-
-export default supabase
+export {
+  supabase,
+  getSupabaseClient,
+  getSession,
+  getUser,
+  getAccessToken,
+  signOut,
+} from "@/services/supabase"

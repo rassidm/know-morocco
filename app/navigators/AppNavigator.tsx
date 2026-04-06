@@ -14,7 +14,7 @@ import { LoginScreen } from "@/screens/LoginScreen"
 import { WelcomeScreen } from "@/screens/WelcomeScreen"
 import { useAppTheme } from "@/theme/context"
 
-import type { AppStackParamList, NavigationProps } from "./navigationTypes"
+import type { AppStackParamListLegacy, NavigationProps } from "./navigationTypes"
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 
 /**
@@ -24,7 +24,7 @@ import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
 const exitRoutes = Config.exitRoutes
 
 // Documentation: https://reactnavigation.org/docs/stack-navigator/
-const Stack = createNativeStackNavigator<AppStackParamList>()
+const Stack = createNativeStackNavigator<AppStackParamListLegacy>()
 
 const AppStack = () => {
   const { isAuthenticated } = useAuth()

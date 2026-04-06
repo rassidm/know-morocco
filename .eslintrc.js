@@ -102,4 +102,12 @@ module.exports = {
     ],
     "import/newline-after-import": 1,
   },
+  overrides: [
+    {
+      files: ["app/navigators/navigationTypes.ts"],
+      rules: {
+        "@typescript-eslint/no-namespace": "off",
+      },
+    },
+  ],
 }

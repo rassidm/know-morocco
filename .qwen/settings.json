@@ -23,7 +23,8 @@
       "WebFetch(raw.githubusercontent.com)",
       "Bash(del *)",
       "Bash(cmd *)",
-      "Bash(rmdir *)"
+      "Bash(rmdir *)",
+      "Bash(@sed *)"
     ]
   },
   "$version": 3

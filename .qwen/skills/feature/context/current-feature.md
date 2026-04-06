@@ -1,36 +1,22 @@
-# Current Feature: Internationalization (i18n) Setup
+# Current Feature
+
+<!-- Load a feature with: /feature load <feature-file.md> -->
 
 ## Status
-Complete
+Not Started
 
 ## Goals
-- [x] i18next configured for React Native
-- [x] Translation files created for English (en)
-- [x] Translation files created for French (fr)
-- [x] Translation files created for Spanish (es)
-- [x] Language detection from device locale
-- [x] Language switching functionality
-- [x] Translation hook created
-- [x] Date/time localization configured
-- [x] RTL support ready (if needed in future)
+<!-- Bullet points of what success looks like -->
 
 ## Notes
-- **Feature ID:** 004
-- **Phase:** 1 - Foundation Setup
-- **Dependencies:** 001 (Project Configuration), 002 (Theme System)
-- **Estimated Time:** 45 minutes
-- Uses `expo-localization` for device language detection
-- Translations organized by feature/screen for maintainability
-- `t()` function supports nested keys (e.g., `auth.signInWithGoogle`)
-- Consider adding Arabic (ar) in the future for RTL support
-- Date/time formatting will be handled by `date-fns` with locale support
+<!-- Additional context, constraints, or details from spec -->
 
 ## History
 <!-- Append completed features here (most recent at bottom) -->
 - **Feature 004 - Internationalization (i18n) Setup** - Complete
-  - Added Know Morocco-specific translations to en.ts, fr.ts, es.ts (app, navigation, auth, home, card, nearby, profile, language, settings, offline, status, categories, a11y, time, ads)
-  - Created useTranslation hook with typed translations and changeLanguage function
-  - Added SUPPORTED_LANGUAGES metadata with language codes, names, native names, and flags
+  - Added Know Morocco translations to en.ts, fr.ts, es.ts (15 sections each)
+  - Created useTranslation hook with changeLanguage and currentLanguage
+  - Added SUPPORTED_LANGUAGES metadata with codes, names, native names, flags
   - Added getLanguageName and getLanguageFlag helper functions
   - Created i18nTypes.ts to break circular dependency
   - Fixed type annotations on ar.ts, hi.ts, ja.ts, ko.ts demo files

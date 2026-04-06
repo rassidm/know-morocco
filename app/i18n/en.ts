@@ -122,6 +122,223 @@ const en = {
     },
   },
 
+  // Know Morocco - App metadata
+  app: {
+    name: "Know Morocco",
+    tagline: "Discover Morocco's Rich Heritage",
+  },
+
+  // Know Morocco - Navigation
+  navigation: {
+    home: "Home",
+    nearby: "Nearby",
+    profile: "Profile",
+    settings: "Settings",
+    favorites: "Favorites",
+    back: "Back",
+    close: "Close",
+    done: "Done",
+  },
+
+  // Know Morocco - Authentication
+  auth: {
+    title: "Welcome to Know Morocco",
+    subtitle: "Your personal cultural guide",
+    signInWithGoogle: "Sign in with Google",
+    signingIn: "Signing in...",
+    signOut: "Sign Out",
+    signOutConfirm: "Are you sure you want to sign out?",
+    welcome: "Welcome!",
+    loginRequired: "Please sign in to continue",
+    loginSuccess: "Successfully signed in!",
+    loginError: "Failed to sign in. Please try again.",
+  },
+
+  // Know Morocco - Home Screen
+  home: {
+    title: "Discover Morocco",
+    subtitle: "Swipe to explore knowledge cards",
+    noCards: "No more cards nearby",
+    checkNearby: "Check nearby content",
+    loading: "Loading cards...",
+    refresh: "Pull to refresh",
+    categoryFilter: "Filter by category",
+  },
+
+  // Know Morocco - Knowledge Cards
+  card: {
+    monuments: "Monuments",
+    food: "Food & Restaurants",
+    history: "History",
+    culture: "Culture",
+    learnMore: "Learn More",
+    playAudio: "Play Audio",
+    pauseAudio: "Pause Audio",
+    dismiss: "Dismiss",
+    next: "Next",
+    previous: "Previous",
+    of: "of",
+    favorite: "Favorite",
+    unfavorite: "Remove from Favorites",
+    share: "Share",
+    distance: "{{distance}}m away",
+  },
+
+  // Know Morocco - Nearby Screen
+  nearby: {
+    title: "Nearby Content",
+    subtitle: "Browse cultural sites around you",
+    noLocation: "Location access required",
+    locationDenied: "Location access was denied. Please enable it in settings.",
+    enableLocation: "Enable Location",
+    searching: "Searching for nearby content...",
+    noResults: "No content found nearby",
+    trySearch: "Try searching for a specific location",
+    search: "Search",
+    distance: "Distance",
+    sortBy: "Sort by",
+    nearest: "Nearest",
+    farthest: "Farthest",
+  },
+
+  // Know Morocco - Profile Screen
+  profile: {
+    title: "Profile",
+    editProfile: "Edit Profile",
+    language: "Language",
+    selectLanguage: "Select Language",
+    theme: "Theme",
+    darkMode: "Dark Mode",
+    lightMode: "Light Mode",
+    systemTheme: "System Default",
+    notifications: "Notifications",
+    offlineContent: "Offline Content",
+    manageDownloads: "Manage Downloads",
+    about: "About",
+    version: "Version",
+    privacyPolicy: "Privacy Policy",
+    termsOfService: "Terms of Service",
+    help: "Help & Support",
+    contactUs: "Contact Us",
+    rateApp: "Rate App",
+    signOut: "Sign Out",
+  },
+
+  // Know Morocco - Language Selection
+  language: {
+    title: "Select Language",
+    subtitle: "Choose your preferred language",
+    current: "Current",
+    english: "English",
+    french: "French",
+    spanish: "Spanish",
+    saved: "Language saved!",
+  },
+
+  // Know Morocco - Settings
+  settings: {
+    title: "Settings",
+    general: "General",
+    language: "Language",
+    theme: "Theme",
+    notifications: "Notifications",
+    location: "Location Services",
+    privacy: "Privacy",
+    data: "Data & Storage",
+    about: "About",
+    version: "App Version",
+    build: "Build Number",
+  },
+
+  // Know Morocco - Offline Mode
+  offline: {
+    title: "Offline Content",
+    subtitle: "Download content for offline access",
+    downloading: "Downloading...",
+    downloaded: "Downloaded",
+    notDownloaded: "Not Downloaded",
+    downloadAll: "Download All",
+    deleteAll: "Delete All",
+    download: "Download",
+    delete: "Delete",
+    size: "Size",
+    lastUpdated: "Last Updated",
+    noContent: "No offline content available",
+    storageFull: "Storage full. Please free up space.",
+    downloadComplete: "Download complete!",
+    downloadError: "Download failed. Please try again.",
+  },
+
+  // Know Morocco - Status Messages
+  status: {
+    loading: "Loading...",
+    success: "Success!",
+    error: "Error",
+    retry: "Retry",
+    cancel: "Cancel",
+    confirm: "Confirm",
+    saved: "Saved!",
+    deleted: "Deleted!",
+    updated: "Updated!",
+    noInternet: "No internet connection",
+    offline: "You're offline",
+    online: "Back online",
+    syncing: "Syncing...",
+    syncComplete: "Sync complete",
+    syncError: "Sync failed",
+  },
+
+  // Know Morocco - Categories
+  categories: {
+    all: "All",
+    monuments: "Monuments",
+    food: "Food",
+    history: "History",
+    culture: "Culture",
+  },
+
+  // Know Morocco - Accessibility
+  a11y: {
+    close: "Close",
+    open: "Open",
+    menu: "Menu",
+    back: "Go back",
+    next: "Next",
+    previous: "Previous",
+    play: "Play",
+    pause: "Pause",
+    favorite: "Add to favorites",
+    unfavorite: "Remove from favorites",
+    share: "Share",
+    download: "Download",
+    delete: "Delete",
+    refresh: "Refresh",
+    search: "Search",
+    filter: "Filter",
+    sort: "Sort",
+  },
+
+  // Know Morocco - Time & Dates
+  time: {
+    now: "Now",
+    today: "Today",
+    yesterday: "Yesterday",
+    tomorrow: "Tomorrow",
+    minutesAgo: "{{minutes}} minutes ago",
+    hoursAgo: "{{hours}} hours ago",
+    daysAgo: "{{days}} days ago",
+    weeksAgo: "{{weeks}} weeks ago",
+    monthsAgo: "{{months}} months ago",
+    yearsAgo: "{{years}} years ago",
+  },
+
+  // Know Morocco - Ads
+  ads: {
+    sponsored: "Sponsored",
+    learnMore: "Learn More",
+    close: "Close Ad",
+  },
+
   ...demoEn,
 }
 

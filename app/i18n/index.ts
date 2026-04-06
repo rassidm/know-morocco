@@ -6,12 +6,20 @@ import "intl-pluralrules"
 
 // if English isn't your default language, move Translations to the appropriate language file.
 import ar from "./ar"
-import en, { Translations } from "./en"
+import en from "./en"
 import es from "./es"
 import fr from "./fr"
 import hi from "./hi"
 import ja from "./ja"
 import ko from "./ko"
+import type { LanguageCode } from "./useTranslation"
+
+// Re-export useTranslation hook
+export { useTranslation, type LanguageCode } from "./useTranslation"
+
+// Re-export translate helper
+export { translate } from "./translate"
+export type { TxKeyPath } from "./i18nTypes"
 
 const fallbackLocale = "en-US"
 
@@ -59,28 +67,31 @@ export const initI18n = async () => {
 }
 
 /**
- * Builds up valid keypaths for translations.
+ * Supported languages metadata for Know Morocco
  */
+export interface Language {
+  code: LanguageCode
+  name: string
+  nativeName: string
+  flag: string
+}
 
-export type TxKeyPath = RecursiveKeyOf<Translations>
+export const SUPPORTED_LANGUAGES: Language[] = [
+  { code: "en", name: "English", nativeName: "English", flag: "🇬🇧" },
+  { code: "fr", name: "French", nativeName: "Français", flag: "🇫🇷" },
+  { code: "es", name: "Spanish", nativeName: "Español", flag: "🇪🇸" },
+]
 
-// via: https://stackoverflow.com/a/65333050
-type RecursiveKeyOf<TObj extends object> = {
-  [TKey in keyof TObj & (string | number)]: RecursiveKeyOfHandleValue<TObj[TKey], `${TKey}`, true>
-}[keyof TObj & (string | number)]
+/**
+ * Get language name from code
+ */
+export function getLanguageName(code: string): string {
+  return SUPPORTED_LANGUAGES.find((lang) => lang.code === code)?.name || "English"
+}
 
-type RecursiveKeyOfInner<TObj extends object> = {
-  [TKey in keyof TObj & (string | number)]: RecursiveKeyOfHandleValue<TObj[TKey], `${TKey}`, false>
-}[keyof TObj & (string | number)]
-
-type RecursiveKeyOfHandleValue<
-  TValue,
-  Text extends string,
-  IsFirstLevel extends boolean,
-> = TValue extends any[]
-  ? Text
-  : TValue extends object
-    ? IsFirstLevel extends true
-      ? Text | `${Text}:${RecursiveKeyOfInner<TValue>}`
-      : Text | `${Text}.${RecursiveKeyOfInner<TValue>}`
-    : Text
+/**
+ * Get language flag from code
+ */
+export function getLanguageFlag(code: string): string {
+  return SUPPORTED_LANGUAGES.find((lang) => lang.code === code)?.flag || "🇬🇧"
+}

@@ -1,7 +1,7 @@
 import i18n from "i18next"
 import type { TOptions } from "i18next"
 
-import { TxKeyPath } from "."
+import type { TxKeyPath } from "./i18nTypes"
 
 /**
  * Translates text.

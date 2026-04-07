@@ -149,6 +149,8 @@ const es: Translations = {
     subtitle: "Tu guía cultural personal",
     signInWithGoogle: "Iniciar sesión con Google",
     signingIn: "Iniciando sesión...",
+    completingAuth: "Completando autenticación...",
+    authTimeout: "La autenticación expiró. Por favor, inténtalo de nuevo.",
     signOut: "Cerrar sesión",
     signOutConfirm: "¿Estás seguro de que quieres cerrar sesión?",
     welcome: "¡Bienvenido!",

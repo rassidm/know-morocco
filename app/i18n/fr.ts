@@ -149,6 +149,8 @@ const fr: Translations = {
     subtitle: "Votre guide culturel personnel",
     signInWithGoogle: "Se connecter avec Google",
     signingIn: "Connexion en cours...",
+    completingAuth: "Finalisation de l'authentification...",
+    authTimeout: "L'authentification a expiré. Veuillez réessayer.",
     signOut: "Se déconnecter",
     signOutConfirm: "Êtes-vous sûr de vouloir vous déconnecter ?",
     welcome: "Bienvenue !",

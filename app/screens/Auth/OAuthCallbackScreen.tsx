@@ -4,6 +4,7 @@ import { ActivityIndicator, TextStyle, ViewStyle } from "react-native"
 import { Screen } from "@/components/Screen"
 import { Text } from "@/components/Text"
 import { useAuth } from "@/context/AuthContext"
+import { useTranslation } from "@/i18n"
 import type { AuthScreenProps } from "@/navigators/navigationTypes"
 import { useAppTheme } from "@/theme/context"
 import type { ThemedStyle } from "@/theme/types"
@@ -15,6 +16,7 @@ import type { ThemedStyle } from "@/theme/types"
 export function OAuthCallbackScreen(_props: AuthScreenProps<"OAuthCallback">) {
   const { themed } = useAppTheme()
   const { isAuthenticated, isLoading } = useAuth()
+  const { t } = useTranslation()
   const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -25,11 +27,11 @@ export function OAuthCallbackScreen(_props: AuthScreenProps<"OAuthCallback">) {
 
     // Set a timeout in case auth state doesn't update
     const timer = setTimeout(() => {
-      setError("Authentication timed out. Please try again.")
+      setError(t("auth:authTimeout"))
     }, 15000) // 15 second timeout
 
     return () => clearTimeout(timer)
-  }, [isAuthenticated])
+  }, [isAuthenticated, t])
 
   if (error) {
     return (
@@ -51,7 +53,7 @@ export function OAuthCallbackScreen(_props: AuthScreenProps<"OAuthCallback">) {
     >
       <ActivityIndicator size="large" />
       <Text
-        text={isLoading ? "Signing you in..." : "Completing authentication..."}
+        text={isLoading ? t("auth:signingIn") : t("auth:completingAuth")}
         style={themed($loadingText)}
       />
     </Screen>

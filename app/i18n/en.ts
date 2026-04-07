@@ -146,6 +146,8 @@ const en = {
     subtitle: "Your personal cultural guide",
     signInWithGoogle: "Sign in with Google",
     signingIn: "Signing in...",
+    completingAuth: "Completing authentication...",
+    authTimeout: "Authentication timed out. Please try again.",
     signOut: "Sign Out",
     signOutConfirm: "Are you sure you want to sign out?",
     welcome: "Welcome!",

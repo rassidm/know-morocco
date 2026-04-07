@@ -1,20 +1,19 @@
 # Current Feature
 
-**009-auth-service.md** - Auth Service - Google OAuth Integration
-
 ## Status
-Complete
 
-## Goals
-- ✅ Google OAuth provider configured in Supabase (code ready, requires dashboard setup)
-- ✅ signInWithGoogle function implemented (`app/services/authService.ts`)
-- ✅ signOut function implemented with global scope
-- ✅ Session refresh function implemented (`refreshSession`)
-- ✅ Auth error handling (try/catch + AuthError typing in all functions)
-- ✅ Deep linking configured for OAuth callback (`app.json` scheme + intentFilters)
-- ✅ Auth service tested with mock flow (`app/services/authService.mock.ts`)
+<!-- Not Started | In Progress | Completed -->
 
-## Implementation Summary
+No active feature
+
+## History
+
+### Feature 009 - Auth Service (Google OAuth Integration)
+
+**Completed:** 2026-04-07
+
+**Summary:**
+Created the authentication service that handles Google OAuth sign-in, sign-out, and session management with Supabase Auth. Provides backend logic for the Login screen.
 
 **Files Created:**
 - `app/services/authService.ts` - Main auth service with signInWithGoogle, signOut, getSession, getCurrentUser, refreshSession, handleOAuthCallback, isAuthenticated, waitForAuth
@@ -27,9 +26,10 @@ Complete
 **Notes:**
 - Google OAuth must be configured in Supabase dashboard before testing (Authentication → Providers → Google)
 - Deep linking scheme changed from "know-morocco" to "knowmorocco" for consistency with auth callback URL
-- Mock auth service returns true for isAuthenticated for easy development testing
 
-## History
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
 
 ### Feature 008 - Zustand Store Setup
 

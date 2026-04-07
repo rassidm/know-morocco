@@ -1,39 +1,18 @@
 # Current Feature
 
-## Feature: Card Components - KnowledgeCard Base Structure
-
-**Feature ID:** 015
-**Phase:** 3 - Core UI Components
-**Dependencies:** 013 (Button Components), 014 (Text Components)
-
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Completed
+Not Started
 
 ## Goals
 
-Create the base card component structure that will be used to display knowledge cards throughout the Know Morocco app. This feature provides a flexible card component with support for images, text content, action buttons, and proper theme integration, forming the foundation for the knowledge card system.
-
-### Acceptance Criteria
-
-- [x] BaseCard component with container styling
-- [x] CardImage component for card imagery
-- [x] CardContent component for title, description, metadata
-- [x] CardActions component for action buttons
-- [x] Card supports elevated and outlined variants
-- [x] Card has proper spacing and rounded corners
-- [x] Card is accessible and testable
-- [x] All components use theme colors
+<!-- Add feature goals here -->
 
 ## Notes
 
-- Card components are designed to be composable and flexible
-- Image component should handle loading states in future features
-- Card will be extended with swipe gestures in Feature 022
-- Consider adding skeleton loading state for async content
-- Estimated Time: 45 minutes
+<!-- Add any notes about the feature -->
 
 ## History
 
@@ -87,4 +66,16 @@ Created a set of text components providing consistent typography across the app:
 - TypeScript compiles without errors (`npm run compile` exit code 0)
 - ESLint passes (`npm run lint` exit code 0)
 
+### Feature 013 - Button Components - Base, Primary, Secondary, Outline, IconButton
+
+**Completed:** 2026-04-07
+
+**Summary:**
+Created a set of button components providing consistent styling across the app: BaseButton (core button with variants and sizes), PrimaryButton, SecondaryButton, OutlineButton, and IconButton. All buttons support loading states, disabled states, and i18n.
+
 ### Feature 012 - User Profile Service - CRUD Operations
+
+**Completed:** 2026-04-06
+
+**Summary:**
+Created the user profile service with Supabase integration for managing user profiles, preferences, and language settings.

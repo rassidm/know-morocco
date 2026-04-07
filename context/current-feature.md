@@ -1,33 +1,34 @@
-# Current Feature: 010 - Login Screen UI with Mock Data
+# Current Feature
 
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-In Progress
-
-## Goals
-Create the Login screen UI with mock authentication flow. This feature provides the visual interface for users to sign in with Google, using mock data for initial testing before connecting to the real auth service.
-
-### Acceptance Criteria
-- [ ] Login screen displays app logo and tagline
-- [ ] "Sign in with Google" button visible
-- [ ] Button shows loading state during sign-in
-- [ ] Mock authentication flow works
-- [ ] Success navigates to Home screen
-- [ ] Error shows alert with retry option
-- [ ] All text uses i18n translations
-- [ ] Screen is themed (light/dark mode)
-
-## Notes
-- **Phase:** 2 - Authentication & User Management
-- **Estimated Time:** 30 minutes
-- **Dependencies:** 002 (Theme System), 003 (Navigation), 004 (i18n)
-- **Mock Auth Service:** Already created in Feature 009 (`app/services/authService.mock.ts`)
-- **Button Component:** Placeholder until Feature 013
-- **Used By:** Feature 011 (Auth Wiring), Feature 054 (Profile Screen)
+No active feature
 
 ## History
+
+### Feature 010 - Login Screen UI with Mock Data
+
+**Completed:** 2026-04-07
+
+**Summary:**
+Created the Login screen UI with mock authentication flow. Users can sign in with Google using mock data for initial testing before connecting to the real auth service.
+
+**Files Created:**
+- `app/screens/Auth/LoginScreen.tsx` - Login screen with mock auth, logo, tagline, Google sign-in button, loading state, error handling, and terms/privacy text
+
+**Files Modified:**
+- `app/screens/LoginScreen.tsx` - Updated to use mockAuthService instead of real auth context
+- `app/navigators/AuthNavigator.tsx` - Updated import path to new LoginScreen location
+- `app/i18n/en.ts` - Added `termsAccept` translation
+- `app/i18n/fr.ts` - Added `termsAccept` translation
+- `app/i18n/es.ts` - Added `termsAccept` translation
+
+**Notes:**
+- Navigation to Home screen will be wired in Feature 011 (Auth Wiring)
+- All text uses i18n translations, themed with light/dark mode support
+- TypeScript compiles without errors, ESLint passes
 
 ### Feature 009 - Auth Service (Google OAuth Integration)
 

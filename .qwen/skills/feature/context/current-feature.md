@@ -1,28 +1,27 @@
-# Current Feature: User Profile Service - CRUD Operations (Feature 012)
+# Current Feature
+
+<!-- Load a feature with: /feature load <feature-file.md> -->
 
 ## Status
-In Progress - Review
+Not Started
 
 ## Goals
-- UserProfile type defined with all fields
-- createProfile function creates user record in Supabase
-- getProfile function fetches user profile
-- updateProfile function updates user preferences
-- deleteProfile function removes user data
-- Profile auto-created on first login
-- Error handling for all operations
-- Profile service tested with mock data
+<!-- Bullet points of what success looks like -->
 
 ## Notes
-- Phase 2 - Authentication & User Management
-- Dependencies: 005 (Supabase Client), 006 (Auth Context), 009 (Auth Service)
-- Profile should be auto-created on first login to avoid empty states
-- Language preference will be used by Feature 037 (Language Service)
-- RLS policies should allow users to read/update their own profile only
-- Mock service provided for development before Supabase setup
+<!-- Additional context, constraints, or details from spec -->
 
 ## History
 <!-- Append completed features here (most recent at bottom) -->
+- **Feature 012 - User Profile Service - CRUD Operations** - Complete
+  - Added UserProfile, UserProfileUpdate, and ProfileResult types in app/types/user.ts
+  - Created userProfileService with createProfile, getProfile, updateProfile, deleteProfile
+  - Added getOrCreateProfile for auto-creating profiles on first login
+  - Created mock user profile service for development
+  - Integrated profile loading into AuthContext (initialization + SIGNED_IN event)
+  - Handled null fields to match actual Supabase schema
+  - TypeScript compiles without errors
+  - ESLint passes without errors
 - **Feature 004 - Internationalization (i18n) Setup** - Complete
   - Added Know Morocco translations to en.ts, fr.ts, es.ts (15 sections each)
   - Created useTranslation hook with changeLanguage and currentLanguage

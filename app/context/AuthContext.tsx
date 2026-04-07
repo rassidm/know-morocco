@@ -3,6 +3,8 @@ import { createContext } from "react"
 import type { AuthError } from "@supabase/supabase-js"
 
 import { getSession, getUser, signOut as supabaseSignOut, supabase } from "@/services/supabase"
+import { getOrCreateProfile } from "@/services/userProfileService"
+import type { UserProfile } from "@/types/user"
 
 import type { AuthContextValue, AuthProviderProps } from "./AuthContext.types"
 
@@ -17,6 +19,7 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined)
 const INITIAL_AUTH_STATE = {
   user: null,
   session: null,
+  profile: null,
   isAuthenticated: false,
   isLoading: true,
 }
@@ -41,10 +44,19 @@ export function AuthProvider({ children }: AuthProviderProps) {
         const session = await getSession()
         const user = await getUser()
 
+        let profile: UserProfile | null = null
+        if (user) {
+          const profileResult = await getOrCreateProfile(user.id, user.email || "")
+          if (profileResult.success) {
+            profile = profileResult.profile ?? null
+          }
+        }
+
         if (isMounted) {
           setAuthState({
             user: user || null,
             session: session || null,
+            profile,
             isAuthenticated: !!session && !!user,
             isLoading: false,
           })
@@ -70,15 +82,29 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
       if (isMounted) {
         switch (_event) {
-          case "SIGNED_IN":
+          case "SIGNED_IN": {
+            // Auto-create or fetch profile on sign in
+            let profile: UserProfile | null = null
+            if (session?.user) {
+              const profileResult = await getOrCreateProfile(
+                session.user.id,
+                session.user.email || "",
+              )
+              if (profileResult.success) {
+                profile = profileResult.profile ?? null
+              }
+            }
+
             setAuthState((prev) => ({
               ...prev,
               session: session || null,
               user: session?.user || null,
+              profile,
               isAuthenticated: true,
               isLoading: false,
             }))
             break
+          }
 
           case "SIGNED_OUT":
             setAuthState({

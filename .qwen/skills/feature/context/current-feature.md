@@ -1,15 +1,25 @@
-# Current Feature
-
-<!-- Load a feature with: /feature load <feature-file.md> -->
+# Current Feature: User Profile Service - CRUD Operations (Feature 012)
 
 ## Status
-Not Started
+In Progress - Review
 
 ## Goals
-<!-- Bullet points of what success looks like -->
+- UserProfile type defined with all fields
+- createProfile function creates user record in Supabase
+- getProfile function fetches user profile
+- updateProfile function updates user preferences
+- deleteProfile function removes user data
+- Profile auto-created on first login
+- Error handling for all operations
+- Profile service tested with mock data
 
 ## Notes
-<!-- Additional context, constraints, or details from spec -->
+- Phase 2 - Authentication & User Management
+- Dependencies: 005 (Supabase Client), 006 (Auth Context), 009 (Auth Service)
+- Profile should be auto-created on first login to avoid empty states
+- Language preference will be used by Feature 037 (Language Service)
+- RLS policies should allow users to read/update their own profile only
+- Mock service provided for development before Supabase setup
 
 ## History
 <!-- Append completed features here (most recent at bottom) -->

@@ -1,5 +1,7 @@
 import type { User, Session } from "@supabase/supabase-js"
 
+import type { UserProfile } from "@/types/user"
+
 /**
  * Authentication context value interface
  */
@@ -8,6 +10,8 @@ export interface AuthContextValue {
   user: User | null
   /** Current session */
   session: Session | null
+  /** Current user profile */
+  profile: UserProfile | null
   /** Whether user is authenticated */
   isAuthenticated: boolean
   /** Whether auth state is loading */

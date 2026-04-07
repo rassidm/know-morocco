@@ -1,10 +1,39 @@
 # Current Feature
 
+## Feature: User Profile Service - CRUD Operations
+
+**Feature ID:** 012
+**Phase:** 2 - Authentication & User Management
+**Dependencies:** 005 (Supabase Client), 006 (Auth Context), 009 (Auth Service)
+
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-No active feature
+In Progress
+
+## Goals
+
+Create the user profile service that manages user profile data in Supabase. This feature handles creating, reading, updating, and deleting user profiles after authentication, including preferences like language selection and theme.
+
+### Acceptance Criteria
+
+- [ ] UserProfile type defined with all fields
+- [ ] createProfile function creates user record in Supabase
+- [ ] getProfile function fetches user profile
+- [ ] updateProfile function updates user preferences
+- [ ] deleteProfile function removes user data
+- [ ] Profile auto-created on first login
+- [ ] Error handling for all operations
+- [ ] Profile service tested with mock data
+
+## Notes
+
+- Profile should be auto-created on first login to avoid empty states
+- Language preference will be used by Feature 037 (Language Service)
+- Consider adding profile caching for offline access
+- RLS policies should allow users to read/update their own profile only
+- Estimated Time: 45 minutes
 
 ## History
 

@@ -1,39 +1,18 @@
 # Current Feature
 
-## Feature: Loading Components - Spinner, Skeleton
-
-**Feature ID:** 017
-**Phase:** 3 - Core UI Components
-**Dependencies:** 002 (Theme System)
-
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Completed
+Not Started
 
 ## Goals
 
-Create loading indicator components for the Know Morocco app, including a Spinner component for indeterminate loading states and Skeleton components for content placeholder during async operations. These components provide visual feedback to users while content is being fetched or processed.
-
-### Acceptance Criteria
-
-- [x] Spinner component with size variants
-- [x] Skeleton component for content placeholder
-- [x] SkeletonLine variant for text blocks
-- [x] SkeletonImage variant for image placeholders
-- [x] Animation for loading states
-- [x] Theme-aware colors
-- [x] Accessible loading indicators
-- [x] Composable loading screen component
+<!-- Add feature goals here -->
 
 ## Notes
 
-- Spinner uses Animated API for smooth rotation animation
-- Skeleton uses pulse animation for visual feedback
-- Consider using react-native-reanimated for better performance in the future
-- Loading states should be replaced with actual content when data loads
-- Estimated Time: 30 minutes
+<!-- Add any notes about the feature -->
 
 ## History
 

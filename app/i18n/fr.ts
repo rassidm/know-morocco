@@ -155,6 +155,8 @@ const fr: Translations = {
     loginRequired: "Veuillez vous connecter pour continuer",
     loginSuccess: "Connecté avec succès !",
     loginError: "Échec de la connexion. Veuillez réessayer.",
+    termsAccept:
+      "En vous connectant, vous acceptez nos Conditions d'utilisation et Politique de confidentialité",
   },
 
   // Know Morocco - Home Screen

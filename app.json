@@ -33,7 +33,10 @@
             "host": "callback"
           }
         ],
-        "category": ["BROWSABLE", "DEFAULT"]
+        "category": [
+          "BROWSABLE",
+          "DEFAULT"
+        ]
       }
     ]
   },
@@ -41,7 +44,23 @@
     "icon": "./assets/images/app-icon-ios.png",
     "supportsTablet": true,
     "bundleIdentifier": "com.knowmorocco",
-    "associatedDomains": ["applinks:knowmorocco://callback"]
+    "associatedDomains": [
+      "applinks:knowmorocco://callback",
+      "applinks:knowmorocco://callback"
+    ],
+    "privacyManifests": {
+      "NSPrivacyAccessedAPITypes": [
+        {
+          "NSPrivacyAccessedAPIType": "NSPrivacyAccessedAPICategoryUserDefaults",
+          "NSPrivacyAccessedAPITypeReasons": [
+            "CA92.1"
+          ]
+        }
+      ]
+    },
+    "infoPlist": {
+      "ITSAppUsesNonExemptEncryption": false
+    }
   },
   "web": {
     "favicon": "./assets/images/app-icon-web-favicon.png",
@@ -76,6 +95,9 @@
   "extra": {
     "ignite": {
       "version": "11.5.0"
+    },
+    "eas": {
+      "projectId": "2aa453e9-c497-49c0-9e13-65fc92adeb00"
     }
   }
 }

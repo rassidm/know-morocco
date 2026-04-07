@@ -8,6 +8,31 @@ No active feature
 
 ## History
 
+### Feature 011 - Auth Wiring - Connect Login to Service
+
+**Completed:** 2026-04-07
+
+**Summary:**
+Wired the Login screen to the real auth service instead of the mock service. Connected the UI layer to the authentication service, enabling real Google OAuth authentication through Supabase Auth.
+
+**Files Created:**
+- `app/screens/Auth/OAuthCallbackScreen.tsx` - OAuth callback handler with loading state, timeout handling, and error display
+
+**Files Modified:**
+- `app/screens/Auth/LoginScreen.tsx` - Replaced mockAuthService with useAuth hook and real signIn function, updated button text to show loading state
+- `app/navigators/AuthNavigator.tsx` - Added OAuthCallbackScreen to auth stack
+- `app/navigators/navigationTypes.ts` - Added OAuthCallback route to AuthStackParamList
+
+**Notes:**
+- LoginScreen now uses `useAuth().signIn()` which triggers Supabase OAuth flow
+- AuthContext listener handles state changes and RootNavigator automatically navigates to App
+- OAuthCallbackScreen provides visual feedback during OAuth redirect with 15-second timeout
+- All text uses i18n translations
+
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
+
 ### Feature 010 - Login Screen UI with Mock Data
 
 **Completed:** 2026-04-07

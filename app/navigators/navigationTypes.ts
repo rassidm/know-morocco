@@ -20,6 +20,7 @@ export type RootStackParamList = {
 export type AuthStackParamList = {
   Login: undefined
   Welcome: undefined
+  OAuthCallback: undefined
 }
 
 /**

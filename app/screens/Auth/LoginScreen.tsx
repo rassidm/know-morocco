@@ -4,18 +4,19 @@ import { Alert, View, TextStyle, ViewStyle } from "react-native"
 import { Button } from "@/components/Button"
 import { Screen } from "@/components/Screen"
 import { Text } from "@/components/Text"
+import { useAuth } from "@/context/AuthContext"
 import { useTranslation } from "@/i18n"
-import { mockAuthService } from "@/services/authService.mock"
 import { useAppTheme } from "@/theme/context"
 import type { ThemedStyle } from "@/theme/types"
 
 /**
  * Login Screen
- * Google OAuth authentication entry point with mock data
+ * Google OAuth authentication entry point
  */
 export function LoginScreen() {
   const { theme, themed } = useAppTheme()
   const { t } = useTranslation()
+  const { signIn } = useAuth()
   const [isLoading, setIsLoading] = useState(false)
 
   /**
@@ -25,31 +26,21 @@ export function LoginScreen() {
     setIsLoading(true)
 
     try {
-      // Use mock auth service for now
-      const result = await mockAuthService.signInWithGoogle()
+      const result = await signIn()
 
-      if (result.success) {
-        // Navigate to home after successful sign in
-        Alert.alert(t("auth.loginSuccess"), t("auth.welcome"), [
-          {
-            text: "OK",
-            onPress: () => {
-              // Navigate to app (will be wired in Feature 011)
-              console.log("Navigate to Home")
-            },
-          },
-        ])
-      } else {
+      if (!result.success) {
         Alert.alert(t("auth.loginError"), result.error || t("errors.generic"), [
           { text: t("status.retry") },
         ])
       }
+      // Success is handled by AuthContext listener which updates state
+      // and RootNavigator navigates to App
     } catch {
       Alert.alert(t("auth.loginError"), t("errors.generic"), [{ text: t("status.retry") }])
     } finally {
       setIsLoading(false)
     }
-  }, [t])
+  }, [signIn, t])
 
   return (
     <Screen
@@ -76,7 +67,7 @@ export function LoginScreen() {
       <View style={themed($footer)}>
         <Button
           testID="google-sign-in-button"
-          tx="auth:signInWithGoogle"
+          tx={isLoading ? "auth:signingIn" : "auth:signInWithGoogle"}
           style={themed($button)}
           preset="filled"
           onPress={handleSignIn}

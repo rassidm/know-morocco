@@ -12,6 +12,7 @@ import { typography } from "@/theme/typography"
 type Sizes = keyof typeof $sizeStyles
 type Weights = keyof typeof typography.primary
 type Presets = "default" | "bold" | "heading" | "subheading" | "formLabel" | "formHelper"
+type TextColors = "textDim" | "text" | "tint" | "tintInactive" | "error" | "errorBackground"
 
 export interface TextProps extends RNTextProps {
   /**
@@ -44,6 +45,10 @@ export interface TextProps extends RNTextProps {
    */
   size?: Sizes
   /**
+   * Text color modifier (semantic color name).
+   */
+  color?: TextColors
+  /**
    * Children components.
    */
   children?: ReactNode
@@ -57,18 +62,30 @@ export interface TextProps extends RNTextProps {
  * @returns {JSX.Element} The rendered `Text` component.
  */
 export const Text = forwardRef(function Text(props: TextProps, ref: ForwardedRef<RNText>) {
-  const { weight, size, tx, txOptions, text, children, style: $styleOverride, ...rest } = props
-  const { themed } = useAppTheme()
+  const {
+    weight,
+    size,
+    tx,
+    txOptions,
+    text,
+    children,
+    style: $styleOverride,
+    color,
+    ...rest
+  } = props
+  const { themed, theme } = useAppTheme()
 
   const i18nText = tx && translate(tx, txOptions)
   const content = i18nText || text || children
 
   const preset: Presets = props.preset ?? "default"
+  const $colorStyle: TextStyle | undefined = color ? { color: theme.colors[color] } : undefined
   const $styles: StyleProp<TextStyle> = [
     $rtlStyle,
     themed($presets[preset]),
     weight && $fontWeightStyles[weight],
     size && $sizeStyles[size],
+    $colorStyle,
     $styleOverride,
   ]
 

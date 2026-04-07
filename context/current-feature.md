@@ -1,43 +1,43 @@
 # Current Feature
 
-## Feature: User Profile Service - CRUD Operations
+## Feature: Text Components - Custom Text, Heading, Caption
 
-**Feature ID:** 012
-**Phase:** 2 - Authentication & User Management
-**Dependencies:** 005 (Supabase Client), 006 (Auth Context), 009 (Auth Service)
+**Feature ID:** 014
+**Phase:** 3 - Core UI Components
+**Dependencies:** 002 (Theme System)
 
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-In Progress
+Completed
 
 ## Goals
 
-Create the user profile service that manages user profile data in Supabase. This feature handles creating, reading, updating, and deleting user profiles after authentication, including preferences like language selection and theme.
+Create a set of text components that provide consistent typography across the Know Morocco app. This feature includes Heading, Body, Caption, and Label text components with proper theme integration, making it easy to display text with consistent styling throughout the application.
 
 ### Acceptance Criteria
 
-- [ ] UserProfile type defined with all fields
-- [ ] createProfile function creates user record in Supabase
-- [ ] getProfile function fetches user profile
-- [ ] updateProfile function updates user preferences
-- [ ] deleteProfile function removes user data
-- [ ] Profile auto-created on first login
-- [ ] Error handling for all operations
-- [ ] Profile service tested with mock data
+- [x] Heading component for titles and section headers
+- [x] Body component for main content text
+- [x] Caption component for metadata and secondary text
+- [x] Label component for form labels and badges
+- [x] All components use theme typography
+- [x] i18n support via tx prop
+- [x] Custom style override supported
+- [x] Components are accessible and testable
 
 ## Notes
 
-- Profile should be auto-created on first login to avoid empty states
-- Language preference will be used by Feature 037 (Language Service)
-- Consider adding profile caching for offline access
-- RLS policies should allow users to read/update their own profile only
-- Estimated Time: 45 minutes
+- Existing Text component from Ignite boilerplate can be extended
+- Consider adding semantic HTML-like roles for accessibility
+- All text components should support dynamic font sizing in the future
+- Line heights should be carefully chosen to prevent text clipping
+- Estimated Time: 30 minutes
 
 ## History
 
-### Feature 011 - Auth Wiring - Connect Login to Service
+### Feature 012 - User Profile Service - CRUD Operations
 
 **Completed:** 2026-04-07
 

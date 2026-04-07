@@ -1,39 +1,18 @@
 # Current Feature
 
-## Feature: Input Components - TextInput, SearchInput
-
-**Feature ID:** 016
-**Phase:** 3 - Core UI Components
-**Dependencies:** 002 (Theme System)
-
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Completed
+Not Started
 
 ## Goals
 
-Create input components for the Know Morocco app, including a base TextInput component and a specialized SearchInput component. These components will provide consistent form styling, validation support, accessibility, and proper theme integration for all text input needs throughout the application.
-
-### Acceptance Criteria
-
-- [x] Base TextInput component with label and error support
-- [x] SearchInput component with search icon and clear button
-- [x] Input validation error display
-- [x] Disabled and readonly states
-- [x] Placeholder text styling
-- [x] Focus state visual feedback
-- [x] All inputs use theme colors
-- [x] Accessibility labels supported
+<!-- Add feature goals here -->
 
 ## Notes
 
-- TextInput uses forwardRef to support imperative methods
-- Consider adding character count limit in the future
-- SearchInput could integrate with debounce hook for performance
-- Validation logic will be handled by parent components or forms
-- Estimated Time: 30 minutes
+<!-- Add any notes about the feature -->
 
 ## History
 

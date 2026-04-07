@@ -1,10 +1,32 @@
 # Current Feature
 
+**008-zustand-store.md** - Zustand Store Setup
+
 ## Status
+Complete
 
-<!-- Not Started | In Progress | Completed -->
+## Goals
+- ✅ Zustand installed (v5.x)
+- ✅ Store types defined (`app/store/store.types.ts`)
+- ✅ Main app store created (`app/store/appStore.ts`)
+- ✅ Store persists with MMKV (zustand persist middleware + MMKV adapter)
+- ✅ Store hooks exported (selectors + hooks via index barrel)
+- ✅ Store modules organized (`appStore.ts`, `syncQueueStore.ts`, `adStore.ts`)
+- ✅ Actions and selectors typed (TypeScript interfaces + typed selectors)
 
-No active feature
+## Implementation Summary
+
+**Files Created:**
+- `app/store/store.types.ts` - TypeScript interfaces for `AppState`, `SyncQueueState`, `SyncQueueItem`, `AdState`
+- `app/store/appStore.ts` - Main Zustand store with persist middleware, language/theme/sync/cards/location/offline state, and selectors
+- `app/store/syncQueueStore.ts` - Sync queue store for pending operations with add/remove/clear/get actions
+- `app/store/adStore.ts` - Ad impression tracking with frequency capping (interstitial every 4 cards, 5 min cap)
+- `app/store/index.ts` - Barrel export for all stores and types
+
+**Notes:**
+- Fixed TypeScript error: replaced complex `Omit<AppState, keyof Pick<...>>` with explicit `InitialState` interface
+- Each store uses its own MMKV instance with unique ID for isolation
+- `partialize` used to persist only essential fields, avoiding storage bloat
 
 ## History
 

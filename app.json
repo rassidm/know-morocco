@@ -1,7 +1,7 @@
 {
   "name": "know-morocco",
   "slug": "know-morocco",
-  "scheme": "know-morocco",
+  "scheme": "knowmorocco",
   "version": "1.0.0",
   "orientation": "portrait",
   "userInterfaceStyle": "automatic",
@@ -22,12 +22,26 @@
       "backgroundImage": "./assets/images/app-icon-android-adaptive-background.png"
     },
     "allowBackup": false,
-    "edgeToEdgeEnabled": true
+    "edgeToEdgeEnabled": true,
+    "intentFilters": [
+      {
+        "action": "VIEW",
+        "autoVerify": true,
+        "data": [
+          {
+            "scheme": "knowmorocco",
+            "host": "callback"
+          }
+        ],
+        "category": ["BROWSABLE", "DEFAULT"]
+      }
+    ]
   },
   "ios": {
     "icon": "./assets/images/app-icon-ios.png",
     "supportsTablet": true,
-    "bundleIdentifier": "com.knowmorocco"
+    "bundleIdentifier": "com.knowmorocco",
+    "associatedDomains": ["applinks:knowmorocco://callback"]
   },
   "web": {
     "favicon": "./assets/images/app-icon-web-favicon.png",

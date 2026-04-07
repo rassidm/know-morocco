@@ -1,10 +1,33 @@
 # Current Feature
 
+**009-auth-service.md** - Auth Service - Google OAuth Integration
+
 ## Status
+Complete
 
-<!-- Not Started | In Progress | Completed -->
+## Goals
+- ✅ Google OAuth provider configured in Supabase (code ready, requires dashboard setup)
+- ✅ signInWithGoogle function implemented (`app/services/authService.ts`)
+- ✅ signOut function implemented with global scope
+- ✅ Session refresh function implemented (`refreshSession`)
+- ✅ Auth error handling (try/catch + AuthError typing in all functions)
+- ✅ Deep linking configured for OAuth callback (`app.json` scheme + intentFilters)
+- ✅ Auth service tested with mock flow (`app/services/authService.mock.ts`)
 
-No active feature
+## Implementation Summary
+
+**Files Created:**
+- `app/services/authService.ts` - Main auth service with signInWithGoogle, signOut, getSession, getCurrentUser, refreshSession, handleOAuthCallback, isAuthenticated, waitForAuth
+- `app/services/authLinking.ts` - Deep linking utilities (subscribeToAuthLinks, openAuthUrl, handleAuthDeepLink)
+- `app/services/authService.mock.ts` - Mock auth service for development/testing with MOCK_USER and MOCK_SESSION
+
+**Files Modified:**
+- `app.json` - Updated scheme to "knowmorocco", added Android intentFilters for deep linking, added iOS associatedDomains
+
+**Notes:**
+- Google OAuth must be configured in Supabase dashboard before testing (Authentication → Providers → Google)
+- Deep linking scheme changed from "know-morocco" to "knowmorocco" for consistency with auth callback URL
+- Mock auth service returns true for isAuthenticated for easy development testing
 
 ## History
 

@@ -54,15 +54,26 @@ export async function getSession() {
  * Get the current user
  */
 export async function getUser() {
-  const {
-    data: { user },
-    error,
-  } = await supabase.auth.getUser()
-  if (error) {
-    console.error("Error getting user:", error)
+  try {
+    const session = await getSession()
+    if (!session) {
+      return null
+    }
+
+    const {
+      data: { user },
+      error,
+    } = await supabase.auth.getUser()
+    if (error) {
+      console.error("Error getting user:", error)
+      return null
+    }
+    return user
+  } catch (err) {
+    // AuthSessionMissingError is expected when no session exists
+    console.warn("No active session:", err)
     return null
   }
-  return user
 }
 
 /**

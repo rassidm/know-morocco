@@ -26,7 +26,8 @@
       "Bash(rmdir *)",
       "Bash(@sed *)",
       "Bash(type *)",
-      "Bash(select-object *)"
+      "Bash(select-object *)",
+      "Bash(git config *)"
     ]
   },
   "$version": 3

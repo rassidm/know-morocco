@@ -1,10 +1,31 @@
-# Current Feature
+# Current Feature: 010 - Login Screen UI with Mock Data
 
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-No active feature
+In Progress
+
+## Goals
+Create the Login screen UI with mock authentication flow. This feature provides the visual interface for users to sign in with Google, using mock data for initial testing before connecting to the real auth service.
+
+### Acceptance Criteria
+- [ ] Login screen displays app logo and tagline
+- [ ] "Sign in with Google" button visible
+- [ ] Button shows loading state during sign-in
+- [ ] Mock authentication flow works
+- [ ] Success navigates to Home screen
+- [ ] Error shows alert with retry option
+- [ ] All text uses i18n translations
+- [ ] Screen is themed (light/dark mode)
+
+## Notes
+- **Phase:** 2 - Authentication & User Management
+- **Estimated Time:** 30 minutes
+- **Dependencies:** 002 (Theme System), 003 (Navigation), 004 (i18n)
+- **Mock Auth Service:** Already created in Feature 009 (`app/services/authService.mock.ts`)
+- **Button Component:** Placeholder until Feature 013
+- **Used By:** Feature 011 (Auth Wiring), Feature 054 (Profile Screen)
 
 ## History
 

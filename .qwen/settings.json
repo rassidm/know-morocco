@@ -25,7 +25,8 @@
       "Bash(cmd *)",
       "Bash(rmdir *)",
       "Bash(@sed *)",
-      "Bash(type *)"
+      "Bash(type *)",
+      "Bash(select-object *)"
     ]
   },
   "$version": 3

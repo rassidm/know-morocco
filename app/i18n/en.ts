@@ -152,6 +152,7 @@ const en = {
     loginRequired: "Please sign in to continue",
     loginSuccess: "Successfully signed in!",
     loginError: "Failed to sign in. Please try again.",
+    termsAccept: "By signing in, you agree to our Terms of Service and Privacy Policy",
   },
 
   // Know Morocco - Home Screen

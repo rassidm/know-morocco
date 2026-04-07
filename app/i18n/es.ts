@@ -155,6 +155,8 @@ const es: Translations = {
     loginRequired: "Por favor, inicia sesión para continuar",
     loginSuccess: "¡Sesión iniciada correctamente!",
     loginError: "Error al iniciar sesión. Por favor, inténtalo de nuevo.",
+    termsAccept:
+      "Al iniciar sesión, aceptas nuestros Términos de servicio y Política de privacidad",
   },
 
   // Know Morocco - Home Screen

@@ -1,38 +1,18 @@
 # Current Feature
 
-## Feature: Icon Components - Icon Wrapper, Category Icons
-
-**Feature ID:** 018
-**Phase:** 3 - Core UI Components
-**Dependencies:** 002 (Theme System)
-
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Completed
+Not Started
 
 ## Goals
 
-Create icon components for the Know Morocco app, including a base IconWrapper component for consistent icon styling and a set of category icons for monuments, food, history, and culture. This feature provides a unified icon system that can be used throughout the application with proper theme integration.
-
-### Acceptance Criteria
-
-- [x] IconWrapper component with size variants
-- [x] Category icons for Monuments, Food, History, Culture
-- [x] Icon supports color customization
-- [x] Icon supports accessibility labels
-- [x] Icon scales properly with size variants
-- [x] All icons use theme colors
-- [x] Icon button variant with pressable state
+<!-- Add feature goals here -->
 
 ## Notes
 
-- Using emoji as placeholder icons for now
-- Can be replaced with vector icons (e.g., react-native-vector-icons) later
-- Consider adding custom SVG icon support in the future
-- Icons should maintain aspect ratio
-- Estimated Time: 30 minutes
+<!-- Add any notes about the feature -->
 
 ## History
 

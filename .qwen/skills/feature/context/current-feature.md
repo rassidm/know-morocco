@@ -1,15 +1,25 @@
-# Current Feature
-
-<!-- Load a feature with: /feature load <feature-file.md> -->
+# Current Feature: Button Components - Primary, Secondary, Icon (Feature 013)
 
 ## Status
-Not Started
+In Progress
 
 ## Goals
-<!-- Bullet points of what success looks like -->
+- PrimaryButton component with filled style
+- SecondaryButton component with outlined style
+- IconButton component for icon-only actions
+- Loading state with spinner indicator
+- Disabled state with reduced opacity
+- All buttons use theme colors
+- Accessibility labels supported
+- Pressable feedback (scale/opacity animation)
 
 ## Notes
-<!-- Additional context, constraints, or details from spec -->
+- Phase 3 - Core UI Components
+- Dependencies: 002 (Theme System)
+- Existing Button component from Ignite boilerplate can be enhanced or replaced
+- Button should support both i18n keys (tx) and direct text
+- Consider adding ripple effect for Android
+- All buttons should be minimum 44x44 touch target for accessibility
 
 ## History
 <!-- Append completed features here (most recent at bottom) -->

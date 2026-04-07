@@ -1,41 +1,65 @@
 # Current Feature
 
-## Feature: User Profile Service - CRUD Operations
+## Feature: Card Components - KnowledgeCard Base Structure
 
-**Feature ID:** 012
-**Phase:** 2 - Authentication & User Management
-**Dependencies:** 005 (Supabase Client), 006 (Auth Context), 009 (Auth Service)
+**Feature ID:** 015
+**Phase:** 3 - Core UI Components
+**Dependencies:** 013 (Button Components), 014 (Text Components)
 
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Not Started
+Completed
 
 ## Goals
 
-Create the user profile service that manages user profile data in Supabase. This feature handles creating, reading, updating, and deleting user profiles after authentication, including preferences like language selection and theme.
+Create the base card component structure that will be used to display knowledge cards throughout the Know Morocco app. This feature provides a flexible card component with support for images, text content, action buttons, and proper theme integration, forming the foundation for the knowledge card system.
 
 ### Acceptance Criteria
 
-- [ ] UserProfile type defined with all fields
-- [ ] createProfile function creates user record in Supabase
-- [ ] getProfile function fetches user profile
-- [ ] updateProfile function updates user preferences
-- [ ] deleteProfile function removes user data
-- [ ] Profile auto-created on first login
-- [ ] Error handling for all operations
-- [ ] Profile service tested with mock data
+- [x] BaseCard component with container styling
+- [x] CardImage component for card imagery
+- [x] CardContent component for title, description, metadata
+- [x] CardActions component for action buttons
+- [x] Card supports elevated and outlined variants
+- [x] Card has proper spacing and rounded corners
+- [x] Card is accessible and testable
+- [x] All components use theme colors
 
 ## Notes
 
-- Profile should be auto-created on first login to avoid empty states
-- Language preference will be used by Feature 037 (Language Service)
-- Consider adding profile caching for offline access
-- RLS policies should allow users to read/update their own profile only
+- Card components are designed to be composable and flexible
+- Image component should handle loading states in future features
+- Card will be extended with swipe gestures in Feature 022
+- Consider adding skeleton loading state for async content
 - Estimated Time: 45 minutes
 
 ## History
+
+### Feature 015 - Card Components - KnowledgeCard Base Structure
+
+**Completed:** 2026-04-07
+
+**Summary:**
+Created the base card component structure for knowledge cards with flexible, composable components. Built BaseCard (container with elevated/outlined/filled variants), CardImage (image display), CardContent (title/description/metadata), CardActions (button container), and KnowledgeCard (composite component). All components use theme colors and proper accessibility attributes.
+
+**Files Created:**
+- `app/components/cards/BaseCard.tsx` — Container with 3 variants (elevated/outlined/filled), pressable support via Pressable
+- `app/components/cards/CardImage.tsx` — Image component with configurable height, resize mode, and accessibility
+- `app/components/cards/CardContent.tsx` — Title (via Heading), description (via Body), and metadata (via Caption) with i18n support
+- `app/components/cards/CardActions.tsx` — Horizontal/vertical layout for action buttons
+- `app/components/cards/KnowledgeCard.tsx` — Composite component combining all sub-components with compound export pattern
+- `app/components/cards/index.ts` — Barrel export for all card components
+
+**Notes:**
+- Fixed TypeScript type issue: used `StyleProp<ViewStyle>` instead of `ThemedStyleArray` for style props after `themed()` resolution
+- CardContent properly types `titleTx` and `descriptionTx` with `TxKeyPath` for i18n type safety
+- KnowledgeCard uses compound component pattern (`KnowledgeCard.Base`, `.Image`, `.Content`, `.Actions`) for flexible usage
+
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
 
 ### Feature 014 - Text Components - Custom Text, Heading, Caption
 

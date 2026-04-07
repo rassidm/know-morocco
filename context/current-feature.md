@@ -1,20 +1,67 @@
 # Current Feature
 
+## Feature: Loading Components - Spinner, Skeleton
+
+**Feature ID:** 017
+**Phase:** 3 - Core UI Components
+**Dependencies:** 002 (Theme System)
+
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Not Started
+Completed
 
 ## Goals
 
-<!-- Add feature goals here -->
+Create loading indicator components for the Know Morocco app, including a Spinner component for indeterminate loading states and Skeleton components for content placeholder during async operations. These components provide visual feedback to users while content is being fetched or processed.
+
+### Acceptance Criteria
+
+- [x] Spinner component with size variants
+- [x] Skeleton component for content placeholder
+- [x] SkeletonLine variant for text blocks
+- [x] SkeletonImage variant for image placeholders
+- [x] Animation for loading states
+- [x] Theme-aware colors
+- [x] Accessible loading indicators
+- [x] Composable loading screen component
 
 ## Notes
 
-<!-- Add any notes about the feature -->
+- Spinner uses Animated API for smooth rotation animation
+- Skeleton uses pulse animation for visual feedback
+- Consider using react-native-reanimated for better performance in the future
+- Loading states should be replaced with actual content when data loads
+- Estimated Time: 30 minutes
 
 ## History
+
+### Feature 017 - Loading Components - Spinner, Skeleton
+
+**Completed:** 2026-04-07
+
+**Summary:**
+Created loading indicator components with animated feedback. Built Spinner (rotating indicator with small/medium/large sizes and overlay variant), Skeleton (pulse-animating placeholder), SkeletonLine (multi-line text skeleton), SkeletonImage (image placeholder skeleton), and LoadingScreen (full-screen or inline loading with optional message). All use React Native Animated API with proper accessibility attributes.
+
+**Files Created:**
+- `app/components/loading/Spinner.tsx` — Rotating spinner with 3 sizes (small/medium/large), overlay variant, custom color support, Animated API
+- `app/components/loading/Skeleton.tsx` — Pulsing placeholder with configurable width/height/borderRadius, Animated opacity sequence
+- `app/components/loading/SkeletonLine.tsx` — Multi-line text skeleton with configurable line count, widths, spacing, and last-line width
+- `app/components/loading/SkeletonImage.tsx` — Image placeholder skeleton wrapping Skeleton with image-specific defaults
+- `app/components/loading/LoadingScreen.tsx` — Full-screen or inline loading indicator with message, uses Screen component
+- `app/components/loading/index.ts` — Barrel export for all loading components
+
+**Notes:**
+- Fixed TypeScript type issues: used `colors.palette.overlay50` (not `colors.overlay50`), narrowed Skeleton width/height types for Animated compatibility
+- Extracted spinner border colors to themed style function to satisfy ESLint `no-inline-styles` and `no-color-literals` rules
+- All animations use React Native Animated API with `useNativeDriver: true` for performance
+- Spinner uses `Animated.loop(Animated.timing(...))` for continuous rotation
+- Skeleton uses `Animated.sequence([...])` for pulse effect
+
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
 
 ### Feature 016 - Input Components - TextInput, SearchInput, TextArea
 

@@ -1,20 +1,63 @@
 # Current Feature
 
+## Feature: Input Components - TextInput, SearchInput
+
+**Feature ID:** 016
+**Phase:** 3 - Core UI Components
+**Dependencies:** 002 (Theme System)
+
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Not Started
+Completed
 
 ## Goals
 
-<!-- Add feature goals here -->
+Create input components for the Know Morocco app, including a base TextInput component and a specialized SearchInput component. These components will provide consistent form styling, validation support, accessibility, and proper theme integration for all text input needs throughout the application.
+
+### Acceptance Criteria
+
+- [x] Base TextInput component with label and error support
+- [x] SearchInput component with search icon and clear button
+- [x] Input validation error display
+- [x] Disabled and readonly states
+- [x] Placeholder text styling
+- [x] Focus state visual feedback
+- [x] All inputs use theme colors
+- [x] Accessibility labels supported
 
 ## Notes
 
-<!-- Add any notes about the feature -->
+- TextInput uses forwardRef to support imperative methods
+- Consider adding character count limit in the future
+- SearchInput could integrate with debounce hook for performance
+- Validation logic will be handled by parent components or forms
+- Estimated Time: 30 minutes
 
 ## History
+
+### Feature 016 - Input Components - TextInput, SearchInput, TextArea
+
+**Completed:** 2026-04-07
+
+**Summary:**
+Created input components for forms and search functionality. Built TextInput (base input with label, error, helper text, disabled/readonly states, focus styling), SearchInput (specialized search input with icon), and TextArea (multi-line input). All components use forwardRef for imperative access and theme-based styling.
+
+**Files Created:**
+- `app/components/inputs/TextInput.tsx` — Base input with label, error/helper text, disabled/readonly states, focus border color change, RightAccessory slot
+- `app/components/inputs/SearchInput.tsx` — Search-specific input with search icon, autoCapitalize="none", autoCorrect=false, web-search keyboard type
+- `app/components/inputs/TextArea.tsx` — Multi-line input with configurable numberOfLines and minHeight
+- `app/components/inputs/index.ts` — Barrel export for all input components
+
+**Notes:**
+- Used `/* eslint-disable no-restricted-imports */` for RN TextInput import since this is the wrapper component itself
+- SearchInput's `onSearch` and `debounceMs` props are reserved for future integration with debounce hook
+- TextArea uses dynamic style function for minHeight based on numberOfLines
+
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
 
 ### Feature 015 - Card Components - KnowledgeCard Base Structure
 

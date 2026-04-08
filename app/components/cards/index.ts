@@ -10,5 +10,7 @@ export type { CardContentProps } from "./CardContent"
 export { CardActions } from "./CardActions"
 export type { CardActionsProps } from "./CardActions"
 
+export { CardContentDisplay } from "./CardContentDisplay"
+
 export { KnowledgeCard } from "./KnowledgeCard"
 export type { KnowledgeCardProps } from "./KnowledgeCard"

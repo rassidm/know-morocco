@@ -7,6 +7,7 @@ import { CardStack } from "@/components/cards/CardStack"
 import { CategoryFilter } from "@/components/filters/CategoryFilter"
 import { Caption } from "@/components/text/Caption"
 import { Heading } from "@/components/text/Heading"
+import { useCategoryFilter } from "@/hooks/useCategoryFilter"
 import { MOCK_CATEGORIES, MOCK_KNOWLEDGE_CARDS, toCardDisplay } from "@/models"
 import type { KnowledgeCardDisplay } from "@/models/KnowledgeCard"
 import { useAppTheme } from "@/theme/context"
@@ -19,14 +20,19 @@ export function HomeScreen() {
   const { themed } = useAppTheme()
   const insets = useSafeAreaInsets()
 
-  // Filter state
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string | "all">("all")
+  // Pre-computed display cards with category names
+  const allDisplayCards = useMemo((): KnowledgeCardDisplay[] => {
+    return MOCK_KNOWLEDGE_CARDS.map((card) => {
+      const category = MOCK_CATEGORIES.find((c) => c.id === card.category_id)
+      return toCardDisplay(card, "en", { category_name: category?.name ?? "" })
+    })
+  }, [])
 
-  // Convert mock cards to display format
-  const allDisplayCards = useMemo(
-    (): KnowledgeCardDisplay[] => MOCK_KNOWLEDGE_CARDS.map((card) => toCardDisplay(card, "en")),
-    [],
-  )
+  // Filter state using reusable hook
+  const { selectedCategoryId, selectCategory, isFiltered, selectedCategoryName } =
+    useCategoryFilter({
+      categories: MOCK_CATEGORIES,
+    })
 
   // Filter cards based on selection
   const filteredCards = useMemo(
@@ -46,22 +52,16 @@ export function HomeScreen() {
   }, [])
 
   // Reset index when filter changes
-  const handleSelectCategory = useCallback((categoryId: string | "all") => {
-    setSelectedCategoryId(categoryId)
-    setCardIndex(0)
-  }, [])
-
-  const isFiltered = selectedCategoryId !== "all"
-
-  // Get friendly category name
-  const selectedCategoryName = useMemo(() => {
-    if (selectedCategoryId === "all") return "All"
-    const category = MOCK_CATEGORIES.find((c) => c.id === selectedCategoryId)
-    return category?.name ?? "Unknown"
-  }, [selectedCategoryId])
+  const handleSelectCategory = useCallback(
+    (categoryId: string | "all") => {
+      selectCategory(categoryId)
+      setCardIndex(0)
+    },
+    [selectCategory],
+  )
 
   return (
-    <View style={themed($container)}>
+    <View style={[themed($container), { paddingTop: insets.top }]}>
       {/* Header */}
       <View style={themed($header)}>
         <Heading level={1} text="Discover Morocco" style={themed($title)} />

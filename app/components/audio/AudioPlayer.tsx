@@ -51,6 +51,19 @@ export function AudioPlayer({ audioUrl, label = "Audio narration", style }: Audi
     }
   }, [sound])
 
+  // Reset when audioUrl changes
+  useEffect(() => {
+    if (sound) {
+      sound.stopAsync()
+      sound.unloadAsync()
+      setSound(null)
+      setPlaybackState("idle")
+      setPosition(0)
+      setDuration(0)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [audioUrl])
+
   // Update progress during playback
   const onPlaybackStatusUpdate = useCallback((status: AVPlaybackStatus) => {
     if (!status.isLoaded) return
@@ -245,7 +258,7 @@ const $buttonText: ThemedStyle<TextStyle> = ({ colors }) => ({
   color: colors.palette.neutral100,
 })
 
-const $timeText: ThemedStyle<ViewStyle> = ({ spacing }) => ({
+const $timeText: ThemedStyle<TextStyle> = ({ spacing }) => ({
   flex: 1,
   marginLeft: spacing.xs,
 })

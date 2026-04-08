@@ -10,7 +10,6 @@ import Animated, {
   Extrapolation,
 } from "react-native-reanimated"
 
-import { AudioPlayer } from "@/components/audio/AudioPlayer"
 import { CardContentDisplay } from "@/components/cards/CardContentDisplay"
 import { Caption } from "@/components/text/Caption"
 import type { KnowledgeCardDisplay } from "@/models/KnowledgeCard"
@@ -93,6 +92,7 @@ export function SwipeableCard({ card, onSwipeLeft, onSwipeRight, style }: Swipea
         rotate.value = withSpring(0, { damping: 15, stiffness: 150 })
       }
     })
+    .runOnJS(true)
 
   // Animated styles
   const animatedCardStyle = useAnimatedStyle(() => ({
@@ -128,8 +128,6 @@ export function SwipeableCard({ card, onSwipeLeft, onSwipeRight, style }: Swipea
       <GestureDetector gesture={panGesture}>
         <Animated.View style={[themed($card), animatedCardStyle, style]}>
           <CardContentDisplay card={card} />
-
-          {card.audio_url && <AudioPlayer audioUrl={card.audio_url} label="Listen to narration" />}
         </Animated.View>
       </GestureDetector>
     </Animated.View>

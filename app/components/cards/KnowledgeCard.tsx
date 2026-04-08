@@ -1,49 +1,50 @@
-import { ReactNode } from "react"
+import { ViewStyle, type StyleProp } from "react-native"
 
-import { BaseCard, BaseCardProps } from "./BaseCard"
-import { CardActions, CardActionsProps } from "./CardActions"
-import { CardContent, CardContentProps } from "./CardContent"
-import { CardImage, CardImageProps } from "./CardImage"
+import type { KnowledgeCardDisplay } from "@/models/KnowledgeCard"
+
+import { BaseCard } from "./BaseCard"
+import { CardActions } from "./CardActions"
+import { CardContentDisplay } from "./CardContentDisplay"
 
 export interface KnowledgeCardProps {
   /**
-   * Props for the base card container
+   * Card data to display
    */
-  card?: Partial<BaseCardProps>
+  card: KnowledgeCardDisplay
   /**
-   * Props for the card image
+   * Called when card is pressed
    */
-  image?: CardImageProps
+  onPress?: () => void
   /**
-   * Props for the card content
+   * Custom action elements
    */
-  content?: CardContentProps
+  actions?: React.ReactNode
   /**
-   * Props for the card actions
+   * Custom style override
    */
-  actions?: CardActionsProps
-  /**
-   * Custom children content (overrides structured props)
-   */
-  children?: ReactNode
+  style?: StyleProp<ViewStyle>
 }
 
 /**
- * Knowledge Card Component - Composite card for knowledge cards
+ * Knowledge Card Component - Complete card with content display
  */
-export function KnowledgeCard({ card, image, content, actions, children }: KnowledgeCardProps) {
+export function KnowledgeCard({ card, onPress, actions, style }: KnowledgeCardProps) {
+  const handlePress = () => {
+    if (onPress) {
+      onPress()
+    }
+  }
+
   return (
-    <BaseCard {...card}>
-      {image && <CardImage {...image} />}
-      {content && <CardContent {...content} />}
-      {actions && <CardActions {...actions} />}
-      {children}
+    <BaseCard variant="elevated" pressable onPress={handlePress} style={style}>
+      <CardContentDisplay card={card} />
+
+      {actions && <CardActions>{actions}</CardActions>}
     </BaseCard>
   )
 }
 
 // Export sub-components for custom usage
 KnowledgeCard.Base = BaseCard
-KnowledgeCard.Image = CardImage
-KnowledgeCard.Content = CardContent
+KnowledgeCard.Content = CardContentDisplay
 KnowledgeCard.Actions = CardActions

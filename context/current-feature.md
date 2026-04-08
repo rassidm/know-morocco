@@ -1,18 +1,51 @@
-# Current Feature
+# Current Feature: Card Content Display - Title, Description, Image
 
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Not Started
+Completed
 
 ## Goals
 
-<!-- Add feature goals here -->
+- Build CardContentDisplay component that renders localized title, description, and image
+- Integrate with KnowledgeCardDisplay interface from Feature 019
+- Handle image loading states (loading placeholder, error fallback)
+- Support text truncation (title: 2 lines, description: 3 lines)
+- Create CardImageLoader utility helpers
+- Update KnowledgeCard component to use CardContentDisplay
 
 ## Notes
 
-<!-- Add any notes about the feature -->
+- **Feature ID:** 020
+- **Phase:** 4 - Knowledge Cards System
+- **Dependencies:** 015 (Card Components), 019 (Knowledge Card Model)
+- **Estimated Time:** 45 minutes
+
+### Acceptance Criteria
+- [ ] CardContentDisplay component renders title, description, and image
+- [ ] Component accepts `KnowledgeCardDisplay` as primary prop
+- [ ] Localized text displays correctly based on language prop
+- [ ] Image shows loading placeholder while fetching
+- [ ] Image handles missing/null URLs gracefully
+- [ ] Text truncation for long descriptions (max 3 lines)
+- [ ] Component is fully themed
+
+### Implementation Steps
+1. Create `app/components/cards/CardContentDisplay.tsx` - Main content display component
+2. Create `app/utils/imageLoader.ts` - Image loading utilities (prefetch, validate, fallback)
+3. Update `app/components/cards/KnowledgeCard.tsx` - Integrate CardContentDisplay
+
+### Key Components
+- `CardContentDisplay` - Renders title, description, image, category badge, location badge, distance
+- `prefetchImage()` - Prefetch image from URL
+- `isValidImageUrl()` - Validate image URL format
+- `getFallbackImage()` - Return local placeholder
+
+### Mock Data
+- `MOCK_CARD_DISPLAY` - Standard card with image
+- `MOCK_CARD_NO_IMAGE` - Card without image
+- `MOCK_CARD_LONG_TEXT` - Card with long title/description for truncation testing
 
 ## History
 

@@ -1,20 +1,67 @@
 # Current Feature
 
+## Feature 021 - Audio Player Component - Play/Pause Controls
+
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Not Started
+Completed
 
 ## Goals
 
-<!-- Add feature goals here -->
+- Build AudioPlayer component with play/pause toggle
+- Show loading state while audio buffers
+- Handle missing audio_url gracefully (hide component)
+- Display error state when audio fails to load
+- Progress indicator shows playback position
+- Accessible controls with proper labels
+- Component cleans up audio on unmount
 
 ## Notes
 
-<!-- Add any notes about the feature -->
+- Uses `expo-av` for audio playback (already included in Expo SDK)
+- Audio is NOT preloaded to save bandwidth - loads on first play
+- Component manages its own sound instance lifecycle
+- Future enhancement: add playback speed control
+- Future enhancement: add seek bar with drag support
+- Consider adding download option for offline audio in Feature 047
+- Dependency: Feature 020 (Card Content Display) must be complete
+
+### Implementation Steps
+
+1. **Create AudioPlayer Component** (`app/components/audio/AudioPlayer.tsx`)
+2. **Create Audio Hook** (`app/hooks/useAudio.ts`) - Optional reusable hook
+3. **Integrate into CardContentDisplay** - Add below description
 
 ## History
+
+### Feature 021 - Audio Player Component - Play/Pause Controls
+
+**Completed:** 2026-04-08
+
+**Summary:**
+Built an audio player component for knowledge card audio narration. Created AudioPlayer component with play/pause toggle, loading state, error handling, progress indicator with time display (mm:ss format), and proper audio cleanup on unmount. Created reusable useAudio hook for audio playback state management. Integrated AudioPlayer into CardContentDisplay below description, conditionally rendered when audio_url exists. Uses expo-av for audio playback with proper accessibility labels.
+
+**Files Created:**
+- `app/components/audio/AudioPlayer.tsx` — Audio player with play/pause/stop controls, progress bar, time display, error/loading states
+- `app/hooks/useAudio.ts` — Reusable hook for audio playback state management
+- `app/components/audio/index.ts` — Barrel export
+
+**Files Modified:**
+- `app/components/cards/CardContentDisplay.tsx` — Added AudioPlayer integration below description
+
+**Notes:**
+- Installed `expo-av` package for audio playback
+- Audio is NOT preloaded to save bandwidth - loads on first play
+- Component manages its own sound instance lifecycle with cleanup on unmount
+- Error state displays when audio fails to load
+- Progress indicator updates during playback with position/duration display
+- Accessibility labels for play/pause/stop buttons
+
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
 
 ### Feature 020 - Card Content Display - Title, Description, Image
 

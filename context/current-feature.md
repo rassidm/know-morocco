@@ -1,40 +1,45 @@
 # Current Feature
 
-## Feature 023 - Category Filter - Filter Chips, Selection
-
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-In Progress
+Not Started
 
 ## Goals
 
-- Build CategoryFilter component with horizontal scrollable chips
-- Each chip shows category name and icon
-- Selected state visually distinct (filled vs outlined)
-- Tapping chip toggles selection
-- "All" chip to clear filters
-- Smooth horizontal scrolling
-- Component supports theme colors
+<!-- Add feature goals here -->
 
 ## Notes
 
-- "All" filter is always present as first chip
-- Chip selection is single-select (not multi-select)
-- Icons map to category names (defined in CATEGORY_CONFIG)
-- Horizontal scrolling prevents layout issues with many categories
-- Future enhancement: add multi-select support
-- Future enhancement: add category count badges
-- Dependency: Feature 019 (Knowledge Card Model) must be complete
-
-### Implementation Steps
-
-1. **Create CategoryChip Component** (`app/components/filters/CategoryChip.tsx`)
-2. **Create CategoryFilter Component** (`app/components/filters/CategoryFilter.tsx`)
-3. **Create useCategoryFilter Hook** (`app/hooks/useCategoryFilter.ts`)
+<!-- Add any notes about the feature -->
 
 ## History
+
+### Feature 023 - Category Filter - Filter Chips, Selection
+
+**Completed:** 2026-04-08
+
+**Summary:**
+Created category filter components with horizontal scrollable chips for filtering knowledge cards by category (Monuments, Food, History, Culture). Built CategoryChip component with selected/unselected visual states (filled primary color vs outlined), emoji icon and label display, and proper accessibility. Built CategoryFilter component with horizontal ScrollView, hidden scroll indicators, and CATEGORY_CONFIG mapping for labels/icons. Created useCategoryFilter hook with selectCategory, clearFilter, filterCards, and selectedCategoryName utilities. "All" chip always present as first option for clearing filters. Single-select behavior throughout.
+
+**Files Created:**
+- `app/components/filters/CategoryChip.tsx` — Individual filter chip with selected/unselected states
+- `app/components/filters/CategoryFilter.tsx` — Horizontal scrollable filter chips container
+- `app/components/filters/index.ts` — Barrel export
+- `app/hooks/useCategoryFilter.ts` — Hook for filter state management and card filtering
+
+**Notes:**
+- Uses emoji icons for categories (📋 All, 🏛️ Monuments, 🍽️ Food, 📜 History, 🎭 Culture)
+- Selected chip: primary500 background with neutral100 text
+- Unselected chip: neutral100 background with border and text color
+- Horizontal ScrollView with hidden scroll indicators
+- Future enhancement: add multi-select support
+- Future enhancement: add category count badges
+
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
 
 ### Feature 022 - Card Swipe Navigation - Gesture Handling
 

@@ -1,55 +1,63 @@
-# Current Feature: Card Content Display - Title, Description, Image
+# Current Feature
 
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Completed
+Not Started
 
 ## Goals
 
-- Build CardContentDisplay component that renders localized title, description, and image
-- Integrate with KnowledgeCardDisplay interface from Feature 019
-- Handle image loading states (loading placeholder, error fallback)
-- Support text truncation (title: 2 lines, description: 3 lines)
-- Create CardImageLoader utility helpers
-- Update KnowledgeCard component to use CardContentDisplay
+<!-- Add feature goals here -->
 
 ## Notes
 
-- **Feature ID:** 020
-- **Phase:** 4 - Knowledge Cards System
-- **Dependencies:** 015 (Card Components), 019 (Knowledge Card Model)
-- **Estimated Time:** 45 minutes
-
-### Acceptance Criteria
-- [ ] CardContentDisplay component renders title, description, and image
-- [ ] Component accepts `KnowledgeCardDisplay` as primary prop
-- [ ] Localized text displays correctly based on language prop
-- [ ] Image shows loading placeholder while fetching
-- [ ] Image handles missing/null URLs gracefully
-- [ ] Text truncation for long descriptions (max 3 lines)
-- [ ] Component is fully themed
-
-### Implementation Steps
-1. Create `app/components/cards/CardContentDisplay.tsx` - Main content display component
-2. Create `app/utils/imageLoader.ts` - Image loading utilities (prefetch, validate, fallback)
-3. Update `app/components/cards/KnowledgeCard.tsx` - Integrate CardContentDisplay
-
-### Key Components
-- `CardContentDisplay` - Renders title, description, image, category badge, location badge, distance
-- `prefetchImage()` - Prefetch image from URL
-- `isValidImageUrl()` - Validate image URL format
-- `getFallbackImage()` - Return local placeholder
-
-### Mock Data
-- `MOCK_CARD_DISPLAY` - Standard card with image
-- `MOCK_CARD_NO_IMAGE` - Card without image
-- `MOCK_CARD_LONG_TEXT` - Card with long title/description for truncation testing
+<!-- Add any notes about the feature -->
 
 ## History
 
+### Feature 020 - Card Content Display - Title, Description, Image
+
+**Completed:** 2026-04-08
+
+**Summary:**
+Built the CardContentDisplay component that renders localized title, description, and image for knowledge cards. Component includes image loading states (loading placeholder, error fallback for null/invalid URLs), text truncation (title: 2 lines, description: 3 lines), category badge, location badge with city, and distance indicator. Created imageLoader utility with `prefetchImage()`, `isValidImageUrl()`, and `getFallbackImage()` helpers. Updated KnowledgeCard component to use `KnowledgeCardDisplay` prop and integrate CardContentDisplay internally. All components fully themed with proper type safety (ViewStyle, ImageStyle, TextStyle).
+
+**Files Created:**
+- `app/components/cards/CardContentDisplay.tsx` — Main content display component with image loading, badges, truncation
+- `app/utils/imageLoader.ts` — Image utilities (prefetch, validate, fallback)
+
+**Files Modified:**
+- `app/components/cards/KnowledgeCard.tsx` — Updated to use KnowledgeCardDisplay prop and CardContentDisplay
+- `app/components/cards/index.ts` — Added CardContentDisplay export
+
+**Notes:**
+- Fixed TypeScript type issues: used separate ViewStyle/ImageStyle/TextStyle for different style objects
+- Fixed missing color properties: used `secondary600` instead of non-existent `secondary800`, `primary600` instead of `primary700`, `textDim` instead of `textSecondary`
+- Removed unused imports (`ReactNode`, `onFavorite`) to satisfy ESLint
+- `getFallbackImage()` references placeholder asset that will be added later
+
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
+
 ### Feature 019 - Knowledge Card Model - TypeScript Interfaces
+
+**Completed:** 2026-04-08
+
+**Summary:**
+Created the core TypeScript interfaces and types for knowledge cards as the single source of truth for the data model. Built `KnowledgeCard` (16 fields mirroring Supabase schema), `KnowledgeCardDisplay` (localized display-ready format), `Category` (4 categories: monuments, food, history, culture), and `CardMetadata` interfaces. Added helper functions: `isKnowledgeCard()` type guard, `getCardTitle()` and `getCardDescription()` for localized text extraction, and `toCardDisplay()` for conversion. Created mock factories (`createMockCard`, `createMockCategory`) and pre-built test data with 6 diverse cards and 4 categories.
+
+**Files Created:**
+- `app/models/KnowledgeCard.ts` — Core interfaces and helper functions
+- `app/models/__mocks__/knowledgeCards.ts` — Mock factories and pre-built test data
+- `app/models/index.ts` — Barrel export
+
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
+
+### Feature 018 - Icon Components - Icon Wrapper, Category Icons
 
 **Completed:** 2026-04-08
 

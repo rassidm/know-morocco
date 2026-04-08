@@ -1,5 +1,11 @@
 import { useState, useEffect, useCallback } from "react"
-import { View, TouchableOpacity, type ViewStyle, type TextStyle } from "react-native"
+import {
+  View,
+  TouchableOpacity,
+  type ViewStyle,
+  type TextStyle,
+  type StyleProp,
+} from "react-native"
 import { Audio, AVPlaybackStatus } from "expo-av"
 
 import { IconSet } from "@/components/icons/IconSet"
@@ -19,7 +25,7 @@ interface AudioPlayerProps {
   /**
    * Custom style override
    */
-  style?: ViewStyle
+  style?: StyleProp<ViewStyle>
 }
 
 export type { AudioPlayerProps }
@@ -151,7 +157,7 @@ export function AudioPlayer({ audioUrl, label = "Audio narration", style }: Audi
           {playbackState === "loading" ? (
             <Caption text="Loading..." style={themed($buttonText)} />
           ) : playbackState === "error" ? (
-            <IconSet name="location" size="md" color="#F44336" />
+            <IconSet name="close" size="md" color="#F44336" />
           ) : playbackState === "playing" ? (
             <IconSet name="pause" size="md" color="white" />
           ) : (

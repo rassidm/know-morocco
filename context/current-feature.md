@@ -1,18 +1,41 @@
 # Current Feature
 
+## Feature 024 - Home Screen - Main Feed with Mock Cards
+
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Not Started
+In Progress
 
 ## Goals
 
-<!-- Add feature goals here -->
+- Build HomeScreen with header and card feed
+- CategoryFilter displays at top of screen
+- Cards display in swipeable stack
+- Filtering by category updates card feed
+- Empty state shows when no cards match filter
+- Screen responds to theme changes
+- Safe area insets respected
+- AdMob banner placeholder at bottom
 
 ## Notes
 
-<!-- Add any notes about the feature -->
+- Screen uses MOCK data - will be replaced with real data in Feature 034
+- BannerAdPlaceholder is temporary placeholder for Feature 051
+- Card index resets to 0 when filter changes for better UX
+- Screen is ready for AdMob integration later
+- Future enhancement: add pull-to-refresh in Feature 035
+- Future enhancement: add search functionality
+- Performance: Consider using FlashList for large card collections
+- Dependencies: Features 020, 021, 022, 023 must be complete
+
+### Implementation Steps
+
+1. **Create HomeScreen Component** (`app/screens/Home/HomeScreen.tsx`)
+2. **Create BannerAdPlaceholder Component** (`app/components/ads/BannerAdPlaceholder.tsx`)
+3. **Update Navigation to Include HomeScreen** (`app/navigators/AppNavigator.tsx`)
+4. **Create Screen Index Export** (`app/screens/Home/index.ts`)
 
 ## History
 

@@ -12,5 +12,11 @@ export type { CardActionsProps } from "./CardActions"
 
 export { CardContentDisplay } from "./CardContentDisplay"
 
+export { SwipeableCard } from "./SwipeableCard"
+export type { SwipeableCardProps } from "./SwipeableCard"
+
+export { CardStack } from "./CardStack"
+export type { CardStackProps } from "./CardStack"
+
 export { KnowledgeCard } from "./KnowledgeCard"
 export type { KnowledgeCardProps } from "./KnowledgeCard"

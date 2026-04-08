@@ -1,18 +1,41 @@
 # Current Feature
 
+## Feature 022 - Card Swipe Navigation - Gesture Handling
+
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Not Started
+In Progress
 
 ## Goals
 
-<!-- Add feature goals here -->
+- Build SwipeableCard component with horizontal swipe gestures
+- Card animates smoothly during swipe (translate + rotate)
+- Swipe left/right triggers navigation to previous/next card
+- Visual indicators show swipe direction
+- Haptic feedback on swipe threshold
+- Swipe cancellation (return to center if not swiped far enough)
+- Works with flat list of cards
 
 ## Notes
 
-<!-- Add any notes about the feature -->
+- Uses `react-native-gesture-handler` for gesture recognition
+- Uses `react-native-reanimated` for smooth animations
+- Uses `expo-haptics` for tactile feedback
+- Threshold is 30% of screen width
+- Max rotation is 15 degrees for subtle effect
+- Spring animation for smooth return to center
+- Component is optimized for performance with shared values
+- Future enhancement: add vertical swipe to dismiss
+- Future enhancement: add undo swipe feature
+- Dependency: Feature 020 (Card Content Display) must be complete
+
+### Implementation Steps
+
+1. **Create SwipeableCard Component** (`app/components/cards/SwipeableCard.tsx`)
+2. **Create CardStack Component** (`app/components/cards/CardStack.tsx`)
+3. **Create useSwipe Hook** (`app/hooks/useSwipe.ts`)
 
 ## History
 

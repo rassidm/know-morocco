@@ -1,18 +1,38 @@
 # Current Feature
 
+## Feature 023 - Category Filter - Filter Chips, Selection
+
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-Not Started
+In Progress
 
 ## Goals
 
-<!-- Add feature goals here -->
+- Build CategoryFilter component with horizontal scrollable chips
+- Each chip shows category name and icon
+- Selected state visually distinct (filled vs outlined)
+- Tapping chip toggles selection
+- "All" chip to clear filters
+- Smooth horizontal scrolling
+- Component supports theme colors
 
 ## Notes
 
-<!-- Add any notes about the feature -->
+- "All" filter is always present as first chip
+- Chip selection is single-select (not multi-select)
+- Icons map to category names (defined in CATEGORY_CONFIG)
+- Horizontal scrolling prevents layout issues with many categories
+- Future enhancement: add multi-select support
+- Future enhancement: add category count badges
+- Dependency: Feature 019 (Knowledge Card Model) must be complete
+
+### Implementation Steps
+
+1. **Create CategoryChip Component** (`app/components/filters/CategoryChip.tsx`)
+2. **Create CategoryFilter Component** (`app/components/filters/CategoryFilter.tsx`)
+3. **Create useCategoryFilter Hook** (`app/hooks/useCategoryFilter.ts`)
 
 ## History
 

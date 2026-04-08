@@ -1,43 +1,52 @@
 # Current Feature
 
-## Feature 024 - Home Screen - Main Feed with Mock Cards
-
 ## Status
 
 <!-- Not Started | In Progress | Completed -->
 
-In Progress
+Not Started
 
 ## Goals
 
-- Build HomeScreen with header and card feed
-- CategoryFilter displays at top of screen
-- Cards display in swipeable stack
-- Filtering by category updates card feed
-- Empty state shows when no cards match filter
-- Screen responds to theme changes
-- Safe area insets respected
-- AdMob banner placeholder at bottom
+<!-- Add feature goals here -->
 
 ## Notes
 
-- Screen uses MOCK data - will be replaced with real data in Feature 034
-- BannerAdPlaceholder is temporary placeholder for Feature 051
-- Card index resets to 0 when filter changes for better UX
-- Screen is ready for AdMob integration later
-- Future enhancement: add pull-to-refresh in Feature 035
-- Future enhancement: add search functionality
-- Performance: Consider using FlashList for large card collections
-- Dependencies: Features 020, 021, 022, 023 must be complete
-
-### Implementation Steps
-
-1. **Create HomeScreen Component** (`app/screens/Home/HomeScreen.tsx`)
-2. **Create BannerAdPlaceholder Component** (`app/components/ads/BannerAdPlaceholder.tsx`)
-3. **Update Navigation to Include HomeScreen** (`app/navigators/AppNavigator.tsx`)
-4. **Create Screen Index Export** (`app/screens/Home/index.ts`)
+<!-- Add any notes about the feature -->
 
 ## History
+
+### Feature 024 - Home Screen - Main Feed with Mock Cards
+
+**Completed:** 2026-04-08
+
+**Summary:**
+Built the main Home screen displaying a swipeable feed of knowledge cards with category filtering. Integrated CategoryFilter, CardStack (with swipe navigation), AudioPlayer, and BannerAdPlaceholder components. Mock data from MOCK_KNOWLEDGE_CARDS converted to KnowledgeCardDisplay format via toCardDisplay(). Category filtering uses useMemo for performance. Card index resets to 0 when filter changes. Empty state shown when no cards match filter. Active filter indicator displays friendly category name. Safe area insets applied to banner ad container. Added GestureHandlerRootView at app root for gesture handler support. Created BannerAdPlaceholder component for future AdMob integration.
+
+**Files Created:**
+- `app/components/ads/BannerAdPlaceholder.tsx` — Placeholder for future AdMob banner
+- `app/components/ads/index.ts` — Barrel export
+- `app/screens/Home/index.ts` — Screen index export
+
+**Files Modified:**
+- `app/screens/Home/HomeScreen.tsx` — Replaced placeholder with full implementation
+- `app/app.tsx` — Added GestureHandlerRootView wrapper, safe area support
+
+**Notes:**
+- Uses mock data (replaced with real data in Feature 034)
+- BannerAdPlaceholder is temporary (replaced with real AdMob in Feature 051)
+- Card index resets to 0 when filter changes for better UX
+- useMemo prevents unnecessary re-filtering on every render
+- Future enhancement: add pull-to-refresh in Feature 035
+- Future enhancement: add search functionality
+- Review fix: Changed error icon from location (📍) to close (✕) in AudioPlayer
+- Review fix: Added GestureHandlerRootView at app root for swipe gesture support
+- Review fix: Active filter shows friendly category name instead of raw ID
+- Review fix: $title style corrected from ViewStyle to TextStyle
+
+**Verification:**
+- TypeScript compiles without errors (`npm run compile` exit code 0)
+- ESLint passes (`npm run lint` exit code 0)
 
 ### Feature 023 - Category Filter - Filter Chips, Selection
 

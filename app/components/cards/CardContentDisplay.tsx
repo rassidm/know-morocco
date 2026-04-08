@@ -8,6 +8,7 @@ import {
   type StyleProp,
 } from "react-native"
 
+import { AudioPlayer } from "@/components/audio/AudioPlayer"
 import { Body } from "@/components/text/Body"
 import { Caption } from "@/components/text/Caption"
 import { Heading } from "@/components/text/Heading"
@@ -97,6 +98,9 @@ export function CardContentDisplay({
         style={themed($description)}
         numberOfLines={truncateDescription ? 3 : undefined}
       />
+
+      {/* Audio Player Section */}
+      {card.audio_url && <AudioPlayer audioUrl={card.audio_url} label="Listen to narration" />}
 
       {/* Location Badge */}
       {card.city && (

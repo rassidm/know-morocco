@@ -41,6 +41,7 @@
     "date-fns": "^4.1.0",
     "expo": "~55.0.9",
     "expo-application": "~55.0.8",
+    "expo-av": "^16.0.8",
     "expo-build-properties": "~55.0.9",
     "expo-dev-client": "~55.0.23",
     "expo-font": "~55.0.4",
